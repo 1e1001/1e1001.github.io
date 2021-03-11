@@ -1,6 +1,57 @@
 <!DOCTYPE html>
-<html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1e1001</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+  </head>
   <body>
-    uh sorry this website is still in development, excpect the first pages to arrive later this week
+    <div class="container">
+      <div class="center">
+        <canvas id="pfp-canvas" width="800" height="600"><img src="assets/pfp-layers/fallback.png" alt="profile picture"></canvas>
+      </div>
+    </div>
+    <script id="vshader" type="x-shader/x-vertex">
+      uniform mat4 u_modelViewProjMatrix;
+      uniform mat4 u_normalMatrix;
+      uniform vec3 lightDir;
+
+      attribute vec3 vNormal;
+      attribute vec4 vTexCoord;
+      attribute vec4 vPosition;
+
+      varying float v_Dot;
+      varying vec2 v_texCoord;
+
+      void main()
+      {
+        gl_Position = u_modelViewProjMatrix * vPosition;
+        v_texCoord = vTexCoord.st;
+        vec4 transNormal = u_normalMatrix * vec4(vNormal, 1);
+        v_Dot = max(dot(transNormal.xyz, lightDir), 0.0);
+      }
+    </script>
+    <script id="fshader" type="x-shader/x-fragment">
+      precision mediump float;
+
+      uniform sampler2D sampler2d;
+
+      varying float v_Dot;
+      varying vec2 v_texCoord;
+
+      void main()
+      {
+        vec2 texCoord = vec2(v_texCoord.s, v_texCoord.t);
+        vec4 color = texture2D(sampler2d, v_texCoord);
+        color += vec4(0.1, 0.1, 0.1, 1);
+        gl_FragColor = vec4(color.xyz * v_Dot, color.a);
+      }
+    </script>
+    <script src="assets/libs/webgl-utils.js"></script>
+    <script src="assets/libs/J3DI.js"></script>
+    <script src="assets/libs/J3DIMath.js"></script>
+    <script src="assets/scripts/pfp.js"></script>
   </body>
 </html>
