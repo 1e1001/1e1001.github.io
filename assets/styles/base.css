@@ -1,3 +1,99 @@
+:root {
+  font-size: 16px;
+  font-family: "MS Gothic";
+  /* font-style: italic; */
+  /* font-weight: bold; */
+}
+
+body {
+  background-color: #000;
+}
+
 body > a {
   display: none;
+}
+
+.pfp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50rem;
+  height: 25rem;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+}
+
+.pfp > img {
+  width: 25rem;
+  height: auto;
+}
+
+.links {
+  justify-content: space-between;
+  height: 65%;
+  width: 16.5rem;
+  align-self: center;
+}
+
+.links * {
+  color: #fff;
+  white-space: nowrap;
+  outline: none;
+  text-decoration: none;
+}
+
+.links :focus {
+  border-left: 1px solid #fff;
+  margin-left: -1px;
+}
+
+.links a:focus, .flink:focus {
+  border-left: none;
+  margin-left: unset;
+  text-decoration: underline;
+}
+
+.flink {
+  cursor: pointer;
+}
+
+.hflex {
+  display: flex;
+  flex-direction: row;
+}
+
+.vflex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 50rem) {
+  .pfp {
+    flex-direction: column;
+    width: 25rem;
+    height: 50rem;
+  }
+  .links {
+    justify-content: unset;
+    line-height: 2.5rem;
+    margin-top: -3.25rem;
+  }
+  @media (max-height: 50rem) {
+    .pfp {
+      top: 0;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+@media screen and (max-height: 25rem) {
+  .pfp {
+    top: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+.pd {
+  color: transparent;
 }
