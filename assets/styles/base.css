@@ -76,7 +76,6 @@ body > a {
   }
   .links {
     justify-content: unset;
-    line-height: 2.5rem;
     margin-top: -3.25rem;
   }
   @media (max-height: 50rem) {
@@ -96,4 +95,8 @@ body > a {
 
 .pd {
   color: transparent;
+}
+
+.to {
+  display: none;
 }
