@@ -1,0 +1,11 @@
+# test post
+huh this is a website!
+# h1
+## h2
+### h3
+=> https://example.com/ a link
+* test
+* cool
+```
+thats a thing!
+```

@@ -1,0 +1,20 @@
+{
+	"templates": {
+		"page": ["%(page-0.html)%(0)%(page-1.html)%(1)%(page-2.html)%(2)%(page-3.html)"],
+		"_title": ["%(//_masto)<span class=\"f w\" tabindex=\"0\" autofocus style=\"display: none;\">/%(0)/</span>"],
+		">": ["<a href=\"/%(0)\">&gt;%(1)</a>"],
+		"_empty": ["<span class=\"pd\">&nbsp;</span>"],
+		"_back": ["<a href=\"/%(0)\">&lt;back</a> "],
+		"_masto": ["<a rel=\"me\" href=\"https://types.pl/@1e1001\"></a>"],
+		"_script_mail": ["<script src=\"/assets/scripts/mail.js\" async></script>"],
+		"_scroll_down": ["<a id=\"down\" href=\"/%(0)#down\"><span id=\"down2\">v</span></a> "],
+		"_scroll_up": ["<a id=\"up\" href=\"/%(0)#up\"><span id=\"up2\">^</span></a>"],
+		"_scroll_down_none": ["<span class=\"f\" tabindex=\"0\" id=\"down\"><span id=\"down2\">v</span></span> "],
+		"_scroll_up_none": ["<span class=\"f\" tabindex=\"0\" id=\"up\"><span id=\"up2\">^</span></span>"],
+		"_topbar": ["<span>%(0)</span>"],
+		"^": ["<a href=\"%(0)\" target=\"_blank\" rel=\"noopener noreferrer\">^%(1)</a>"],
+		"^g": ["<a href=\"https://github.com/1e1001/%(0)\" target=\"_blank\" rel=\"noopener noreferrer\">^%(1)</a>"],
+		"x_mail": ["%(//_script_mail)<span tabindex=\"0\" id=\"mail\">^email: <img alt=\"m\"style=\"display:inline;\"/>ichael<img alt=\"&commat;\"style=\"display:inline;\"/><img alt=\"m\"style=\"display:inline;\"/>alinov<img alt=\"&period;\"style=\"display:inline;\"/><img alt=\"c\"style=\"display:inline;\"/>om<img alt=\"&zwnj;\"style=\"display:inline;\"/></span>"],
+		"_raw": ["<span>%(0)</span>"]
+	}
+}

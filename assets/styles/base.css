@@ -43,14 +43,16 @@ body > a {
   text-decoration: none;
 }
 
-.links :focus {
+.links .f:focus, .links .f:hover {
   border-left: 1px solid #fff;
   margin-left: -1px;
+  /* font-style: italic; */
 }
 
-.links a:focus, .flink:focus {
+.links a:focus, .flink:focus, .links a:hover, .flink:hover {
   border-left: none;
   margin-left: unset;
+  /* font-weight: bold; */
   text-decoration: underline;
 }
 
@@ -66,6 +68,23 @@ body > a {
 .vflex {
   display: flex;
   flex-direction: column;
+}
+
+#up2 {
+  /* display: inline-block; */
+  color: transparent;
+}
+
+#up2::after {
+  position: relative;
+  display: inline-block;
+  transform: rotate(180deg) translateX(1ch);
+  color: white;
+  content: "v";
+}
+
+.w {
+  display: unset !important;
 }
 
 @media screen and (max-width: 50rem) {

@@ -1,0 +1,42 @@
+{
+	"out": "../",
+	"pages": {
+		"home": [
+			[">", "about"],
+			[">", "contact"],
+			[">", "webtoys"],
+			[">", "projects"],
+			[">", "blog"],
+			["^", "pxw", "https://1e1001.ddns.net:25565/index.html"]
+		],
+		"home/about": [
+			"about me:",
+			"    dumb idiot named michael on",
+			"  the internet who somehow knows",
+			"  how to computer."
+		],
+		"home/contact": [
+			["x", "mail"],
+			["^", "types.pl", "https://types.pl/@1e1001"],
+			["^", "telegram", "https://t.me/zz1e1001"],
+			["^", "github", "https://github.com/1e1001"],
+			["^", "youtube", "https://www.youtube.com/channel/UC72Och0GjodEz7wCgVdahyA"],
+			["^", "vectoral", "https://discord.gg/B2a23XC"]
+		],
+		"home/webtoys": [
+			[">", "freezer"],
+			[">", "glend"],
+			["g", [">", "acnl-player"], " (", ["^", "old", "https://1e1001.github.io/acnl-player/"], ")"],
+			["g", [">", "ruben-translator"], " (", ["^", "old", "https://1e1001.github.io/ruben-translator"], ")"]
+		],
+		"home/webtoys/freezer": "html/missing.html",
+		"home/webtoys/glend": "html/missing.html",
+		"home/webtoys/acnl-player": "html/missing.html",
+		"home/webtoys/ruben-translator": "html/missing.html",
+		"home/projects": [
+			["^g", "nsc"],
+			["^g", "fbdn"]
+		],
+		"home/blog": {"type": "blog", "path": "blog/"}
+	}
+}
