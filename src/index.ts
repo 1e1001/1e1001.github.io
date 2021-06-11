@@ -151,6 +151,7 @@ async function MakePage(name: string, page: Page): Promise<[string, string][]> {
 				if (i > 1) elements.push(await GetTemplate(`_scroll_up`, [`${name}-${i-1}.html`], scripts));
 				else elements.push(await GetTemplate(`_scroll_up`, [path], scripts));
 			} else elements.push(await GetTemplate(`_scroll_up_none`, [], scripts));
+			elements.push(await GetTemplate(`_full_page`, [`${name}-full.html`], scripts));
 			if (elements.length > 0) content.unshift(await GetTemplate(`_topbar`, [elements.join("")], scripts));
 			content.unshift(await GetTemplate(`_title`, [name], scripts));
 			const scriptsHTML = scripts.join(`\n`);
@@ -158,21 +159,33 @@ async function MakePage(name: string, page: Page): Promise<[string, string][]> {
 			if (i > 0) pages.push([`${name}-${i}.html`, contentHTML]);
 			else pages.push([path, contentHTML]);
 		}
-		return pages;
-	} else {
-		// add the standard shit
-		const content = html;
-		while (content.length < maxPageLength) content.push(await GetTemplate(`_empty`, [], scripts));
+		// also add the full version
+		while (html.length < maxPageLength) html.push(await GetTemplate(`_empty`, [], scripts));
 		const elements: string[] = [];
 		if (name !== `home`) {
 			let parent = name.split(`/`).slice(0, -1).join(`/`);
 			if (parent === `home`) parent = `index`;
 			elements.push(await GetTemplate(`_back`, [`${parent}.html`], scripts));
 		}
-		if (elements.length > 0) content.unshift(await GetTemplate(`_topbar`, [elements.join("")], scripts));
-		content.unshift(await GetTemplate(`_title`, [name], scripts));
+		if (elements.length > 0) html.unshift(await GetTemplate(`_topbar`, [elements.join("")], scripts));
+		html.unshift(await GetTemplate(`_title`, [name], scripts));
 		const scriptsHTML = scripts.join(`\n`);
-		const contentHTML = await GetTemplate(`page`, [name, content.join(`<br>`), scriptsHTML], scripts);
+		const contentHTML = await GetTemplate(`page`, [name, html.join(`<br>`), scriptsHTML], scripts);
+		pages.push([`${name}-full.html`, contentHTML]);
+		return pages;
+	} else {
+		// add the standard shit
+		while (html.length < maxPageLength) html.push(await GetTemplate(`_empty`, [], scripts));
+		const elements: string[] = [];
+		if (name !== `home`) {
+			let parent = name.split(`/`).slice(0, -1).join(`/`);
+			if (parent === `home`) parent = `index`;
+			elements.push(await GetTemplate(`_back`, [`${parent}.html`], scripts));
+		}
+		if (elements.length > 0) html.unshift(await GetTemplate(`_topbar`, [elements.join("")], scripts));
+		html.unshift(await GetTemplate(`_title`, [name], scripts));
+		const scriptsHTML = scripts.join(`\n`);
+		const contentHTML = await GetTemplate(`page`, [name, html.join(`<br>`), scriptsHTML], scripts);
 		return [[path, contentHTML]];
 	}
 }
