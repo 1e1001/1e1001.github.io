@@ -1,6 +1,6 @@
 {
 	"templates": {
-		"page": ["%(page-0.html)%(0)%(page-1.html)%(1)%(page-2.html)%(2)%(page-3.html)"],
+		"page": ["%(page.html)%(0)</span><main class=\"links vflex\">%(1)</main></div>%(2)</body></html>"],
 		"_title": ["%(//_masto)<span class=\"f w\" tabindex=\"0\" autofocus style=\"display: none;\">/%(0)/</span>"],
 		">": ["<a href=\"/%(0)\">&gt;%(1)</a>"],
 		"_empty": ["<span class=\"pd\">&nbsp;</span>"],

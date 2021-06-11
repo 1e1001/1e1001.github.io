@@ -154,7 +154,7 @@ async function MakePage(name: string, page: Page): Promise<[string, string][]> {
 			if (elements.length > 0) content.unshift(await GetTemplate(`_topbar`, [elements.join("")], scripts));
 			content.unshift(await GetTemplate(`_title`, [name], scripts));
 			const scriptsHTML = scripts.join(`\n`);
-			const contentHTML = await GetTemplate(`page`, [name, content.join(`<br>\n`) + `<br>\n`, scriptsHTML], scripts);
+			const contentHTML = await GetTemplate(`page`, [name, content.join(`<br>`), scriptsHTML], scripts);
 			if (i > 0) pages.push([`${name}-${i}.html`, contentHTML]);
 			else pages.push([path, contentHTML]);
 		}
@@ -172,7 +172,7 @@ async function MakePage(name: string, page: Page): Promise<[string, string][]> {
 		if (elements.length > 0) content.unshift(await GetTemplate(`_topbar`, [elements.join("")], scripts));
 		content.unshift(await GetTemplate(`_title`, [name], scripts));
 		const scriptsHTML = scripts.join(`\n`);
-		const contentHTML = await GetTemplate(`page`, [name, content.join(`<br>\n`) + `<br>\n`, scriptsHTML], scripts);
+		const contentHTML = await GetTemplate(`page`, [name, content.join(`<br>`), scriptsHTML], scripts);
 		return [[path, contentHTML]];
 	}
 }
