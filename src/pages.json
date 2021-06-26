@@ -16,7 +16,7 @@
 			"  how to computer."
 		],
 		"home/contact": [
-			["x", "mail"],
+			["x", "mail_offline"],
 			["^", "types.pl", "https://types.pl/@1e1001"],
 			["^", "telegram", "https://t.me/zz1e1001"],
 			["^", "github", "https://github.com/1e1001"],

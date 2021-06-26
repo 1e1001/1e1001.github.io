@@ -17,6 +17,7 @@
 		"^": ["<a href=\"%(0)\" target=\"_blank\" rel=\"noopener noreferrer\">^%(1)</a>"],
 		"^g": ["<a href=\"https://github.com/1e1001/%(0)\" target=\"_blank\" rel=\"noopener noreferrer\">^%(1)</a>"],
 		"x_mail": ["%(//_script_mail)<span tabindex=\"0\" id=\"mail\">^email: <img alt=\"m\"style=\"display:inline;\"/>ichael<img alt=\"&commat;\"style=\"display:inline;\"/><img alt=\"m\"style=\"display:inline;\"/>alinov<img alt=\"&period;\"style=\"display:inline;\"/><img alt=\"c\"style=\"display:inline;\"/>om<img alt=\"&zwnj;\"style=\"display:inline;\"/></span>"],
+		"x_mail_offline": ["<span tabindex=\"0\">^email: [currently unvailable]/span>"],
 		"_raw": ["<span>%(0)</span>"]
 	}
 }
