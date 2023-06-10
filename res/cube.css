@@ -66,13 +66,13 @@ body {
 }
 .cube-fill {
 	position: relative;
-	right: calc(1vh - 2px);
-	bottom: calc(1vh - 2px);
-	transform: translateZ(calc(2px - 1vh));
 	background-color: black;
 	backface-visibility: hidden;
-	width: calc(30vh - 1px);
-	height: calc(30vh - 1px);
+	right: calc(1vh - 2px);
+	bottom: calc(1vh - 2px);
+	transform: translateZ(calc(3px - 1vh));
+	width: calc(30vh - 3px);
+	height: calc(30vh - 3px);
 }
 #f0 {
 	transform: translateY(15vh) translateZ(15vh) rotateX(-90deg);
