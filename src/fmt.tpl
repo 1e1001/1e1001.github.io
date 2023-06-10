@@ -6,6 +6,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+<meta name="description" content=">>=" />
+<meta name="generator" content="tpl" />
 <title>@:[title]</title>
 <link rel="stylesheet"type="text/css"href="/res/base.css">
 <link rel="stylesheet"type="text/css"href="/res/cube.css">

@@ -1,8 +1,6 @@
 #lang tpl racket/base
-(require "fmt.tpl"
-         tpl/dotutils)
-
-@tpl[(output/if-newer "../index.html" output/file)]{
+(require "fmt.tpl")
+@tpl[(output/file "../index.html")]{
 @cube-style[#:title "1e1001" #:mod-cens #t #:mod-cube #t]{
 <h1 id="head"><span id="hist">1</span>e1001</h1>
 <p>michael on the internet &ndash; any pronouns</p>
