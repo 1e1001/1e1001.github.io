@@ -1,0 +1,630 @@
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-thin.ttf') format('truetype'), url('woff2/iosevka-fuck-thin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedthin.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedthin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-thinoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-thinoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-thinoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-thinoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedthinoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedthinoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedthinoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedthinoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-thinitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-thinitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedthinitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedthinitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extralight.ttf') format('truetype'), url('woff2/iosevka-fuck-extralight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedextralight.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextralight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extralightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extralightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-extralightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extralightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedextralightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextralightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedextralightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextralightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extralightitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extralightitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedextralightitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextralightitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-light.ttf') format('truetype'), url('woff2/iosevka-fuck-light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedlight.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedlight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-lightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-lightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-lightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-lightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedlightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedlightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedlightoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedlightoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-lightitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-lightitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedlightitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedlightitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-regular.ttf') format('truetype'), url('woff2/iosevka-fuck-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extended.ttf') format('truetype'), url('woff2/iosevka-fuck-extended.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-oblique.ttf') format('truetype'), url('woff2/iosevka-fuck-oblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-oblique.ttf') format('truetype'), url('woff2/iosevka-fuck-oblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-italic.ttf') format('truetype'), url('woff2/iosevka-fuck-italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendeditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendeditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-medium.ttf') format('truetype'), url('woff2/iosevka-fuck-medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedmedium.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedmedium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-mediumoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-mediumoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-mediumoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-mediumoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedmediumoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedmediumoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedmediumoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedmediumoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-mediumitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-mediumitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedmediumitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedmediumitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-semibold.ttf') format('truetype'), url('woff2/iosevka-fuck-semibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedsemibold.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedsemibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-semiboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-semiboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-semiboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-semiboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedsemiboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedsemiboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedsemiboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedsemiboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-semibolditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-semibolditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedsemibolditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedsemibolditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-bold.ttf') format('truetype'), url('woff2/iosevka-fuck-bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedbold.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedbold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-boldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-boldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-boldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-boldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-bolditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-bolditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedbolditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedbolditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extrabold.ttf') format('truetype'), url('woff2/iosevka-fuck-extrabold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedextrabold.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextrabold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extraboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extraboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-extraboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extraboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedextraboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextraboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedextraboldoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextraboldoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extrabolditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extrabolditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedextrabolditalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedextrabolditalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-heavy.ttf') format('truetype'), url('woff2/iosevka-fuck-heavy.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('ttf/iosevka-fuck-extendedheavy.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedheavy.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-heavyoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-heavyoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: normal;
+	src: url('ttf/iosevka-fuck-heavyoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-heavyoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: expanded;
+	font-style: oblique;
+	src: url('ttf/iosevka-fuck-extendedheavyoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedheavyoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web Oblique';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: expanded;
+	src: url('ttf/iosevka-fuck-extendedheavyoblique.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedheavyoblique.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-heavyitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-heavyitalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('ttf/iosevka-fuck-extendedheavyitalic.ttf') format('truetype'), url('woff2/iosevka-fuck-extendedheavyitalic.woff2') format('woff2');
+}

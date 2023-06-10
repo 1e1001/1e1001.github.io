@@ -1,0 +1,33 @@
+@import url(./font/iosevka-fuck.css);
+:root {
+	font-size: 16px;
+}
+body {
+	background-color: black;
+	color: white;
+	font-family: sans-serif;
+	font-family: "Iosevka Fuck Web", monospace;
+}
+h1 {
+	margin: 0;
+	font-size: 3rem;
+	font-weight: 200;
+}
+a {
+	color: white;
+}
+a:hover, a:focus {
+	color: black;
+	outline: none;
+	background-color: white;
+}
+a:active {
+	color: white;
+	background-color: none;
+}
+.cens {
+	background-color: white;
+}
+a:hover .cens, a:focus .cens {
+	background-color: black;
+}
