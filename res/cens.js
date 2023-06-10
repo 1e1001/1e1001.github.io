@@ -2,14 +2,7 @@
 var canvas = document.createElement("canvas").getContext("2d");
 canvas.font = "400 16px Iosevka Fuck Web";
 function text_size(text) {
-	var m = canvas.measureText(text);
-	return [
-		//m.actualBoundingBoxLeft.toFixed(3),
-		//m.actualBoundingBoxRight.toFixed(3),
-		//m.actualBoundingBoxAscent.toFixed(3),
-		//m.actualBoundingBoxDescent.toFixed(3),
-		m.width
-	].join();
+	return canvas.measureText(text).width;
 }var lst = Array.from(document.getElementsByClassName("cens"));
 for (var i = 0; i < lst.length; ++i) {
 	var e = lst[i];
