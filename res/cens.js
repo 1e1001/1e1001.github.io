@@ -1,18 +1,26 @@
-var lst = Array.from(document.getElementsByClassName("cens"));
-for (var i = 0; i < lst.length; ++i) {
-	var e = lst[i];
-	e.className = "";
-}
+
 var canvas = document.createElement("canvas").getContext("2d");
 canvas.font = "400 16px Iosevka Fuck Web";
 function text_size(text) {
-	var m = canvas.measureText(text + "|");
+	var m = canvas.measureText(text);
 	return [
-		m.actualBoundingBoxLeft.toFixed(3),
-		m.actualBoundingBoxRight.toFixed(3),
-		m.actualBoundingBoxAscent.toFixed(3),
-		m.actualBoundingBoxDescent.toFixed(3),
+		//m.actualBoundingBoxLeft.toFixed(3),
+		//m.actualBoundingBoxRight.toFixed(3),
+		//m.actualBoundingBoxAscent.toFixed(3),
+		//m.actualBoundingBoxDescent.toFixed(3),
+		m.width
 	].join();
+}var lst = Array.from(document.getElementsByClassName("cens"));
+for (var i = 0; i < lst.length; ++i) {
+	var e = lst[i];
+	e.style.display = "inline-block";
+	e.style.height = "1em";
+	e.style.lineHeight = "1em";
+	e.style.marginBottom = "-3px";
+	e.style.width = canvas.measureText(e.innerText).width + "px";
+	e.style.overflow = "hidden";
+	e.className = "cens-js";
+	lst[i] = [e, e.innerText];
 }
 var table = {};
 var pr_i = -4096;
@@ -33,12 +41,12 @@ function frame() {
 	}
 	c = 0;
 	for (var i = 0; i < lst.length; ++i) {
-		var ch = Array.from(lst[i].innerText);
+		var ch = Array.from(lst[i][1]);
 		for (var j = 0; j < ch.length; ++j) {
 			var l = table[text_size(ch[j])] || ch[j];
 			ch[j] = l[Math.floor(Math.random() * l.length)];
 		}
-		lst[i].innerText = ch.join("");
+		lst[i][0].innerText = ch.join("");
 	}
 }
 frame();

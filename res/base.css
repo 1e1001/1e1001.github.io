@@ -3,7 +3,6 @@
 	font-size: 16px;
 }
 body {
-	background-color: black;
 	color: white;
 	font-family: sans-serif;
 	font-family: "Iosevka Fuck Web", monospace;
@@ -30,4 +29,7 @@ a:active {
 }
 a:hover .cens, a:focus .cens {
 	background-color: black;
+}
+a .cens-js {
+	text-decoration: underline;
 }
