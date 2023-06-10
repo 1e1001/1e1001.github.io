@@ -64,11 +64,11 @@ body {
 	position: absolute;
 	background-color: black;
 	backface-visibility: hidden;
-	right: 2px;
-	bottom: 2px;
+	top: calc(3px - 1vh);
+	left: calc(3px - 1vh);
+	right: calc(3px - 1vh);
+	bottom: calc(3px - 1vh);
 	transform: translateZ(calc(3px - 1vh));
-	width: calc(30vh - 3px);
-	height: calc(30vh - 3px);
 }
 #logo {
 	animation: 1s linear 0s 1 normal both running text-fade-intro;
