@@ -14,9 +14,8 @@ function text_size(text) {
 for (var i = 0; i < lst.length; ++i) {
 	var e = lst[i];
 	e.style.display = "inline-block";
-	e.style.height = "1em";
-	e.style.lineHeight = "1em";
-	e.style.marginBottom = "-3px";
+	e.style.height = "1.25em"
+	e.style.marginBottom = "-0.3125em";
 	e.style.width = canvas.measureText(e.innerText).width + "px";
 	e.style.overflow = "hidden";
 	e.className = "cens-js";
