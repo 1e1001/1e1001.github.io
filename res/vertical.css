@@ -28,8 +28,6 @@
 	height: calc(30vw + 1px);
 }
 .cube-fill {
-	right: calc(1vw - 2px);
-	bottom: calc(1vw - 2px);
 	transform: translateZ(calc(3px - 1vw));
 	width: calc(30vw - 3px);
 	height: calc(30vw - 3px);

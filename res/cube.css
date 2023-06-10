@@ -55,24 +55,24 @@ body {
 .cube-face {
 	animation: 1s linear 0s 1 normal both running cube-fade-intro;
 	position: absolute;
-	width: calc(30vh + 1px);
-	height: calc(30vh + 1px);
 	box-sizing: border-box;
 	transform-style: preserve-3d;
+	width: calc(30vh + 1px);
+	height: calc(30vh + 1px);
+}
+.cube-fill {
+	position: absolute;
+	background-color: black;
+	backface-visibility: hidden;
+	right: 2px;
+	bottom: 2px;
+	transform: translateZ(calc(3px - 1vh));
+	width: calc(30vh - 3px);
+	height: calc(30vh - 3px);
 }
 #logo {
 	animation: 1s linear 0s 1 normal both running text-fade-intro;
 	position: absolute;
-}
-.cube-fill {
-	position: relative;
-	background-color: black;
-	backface-visibility: hidden;
-	right: calc(1vh - 2px);
-	bottom: calc(1vh - 2px);
-	transform: translateZ(calc(3px - 1vh));
-	width: calc(30vh - 3px);
-	height: calc(30vh - 3px);
 }
 #f0 {
 	transform: translateY(15vh) translateZ(15vh) rotateX(-90deg);
