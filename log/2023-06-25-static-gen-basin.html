@@ -150,7 +150,7 @@ to convert the s-expressions into text i have an intermediate type &lt;code&gt;t
 problem is i don&#39;t really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
 &lt;span class=&quot;mono&quot;&gt;-michael&lt;/span&gt;
 
-@:no-p{&lt;footer id=&quot;footnotes&quot;&gt;&lt;hr /&gt;&lt;h3&gt;footnotes&lt;/h3&gt;}
+@:no-p{&lt;footer&gt;&lt;h3&gt;footnotes&lt;/h3&gt;}
 &lt;a id=&quot;foot-1&quot; href=&quot;#rev-1&quot;&gt;¹&lt;/a&gt; in fact i also use tpl to manage my configuration files across my computers!
 &lt;a id=&quot;foot-2&quot; href=&quot;#rev-2&quot;&gt;²&lt;/a&gt; because we totally still use 8.3 filesystems \s.
 &lt;a id=&quot;foot-3&quot; href=&quot;#rev-3&quot;&gt;³&lt;/a&gt; technically, it just contains a modified copy of the implementaiton of &lt;code&gt;#lang at-exp&lt;/code&gt;, but that’s pretty much what it does.
@@ -173,8 +173,8 @@ problem is i don&#39;t really have much to write about :), maybe now that i have
     [(void? item) ""]
     [(tpl-doc? item)
      (apply string-append (map tpl-doc->string (tpl-doc-v item)))]
-    [else (~s item)])}</pre></div><h2>ok but what about an actual blog post</h2><p>problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…</p><p><span class="mono">-michael</span></p><footer id="footnotes"><hr /><h3>footnotes</h3><p><a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!</p><p><a id="foot-2" href="#rev-2">²</a> because we totally still use 8.3 filesystems \s.</p><p><a id="foot-3" href="#rev-3">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.</p></footer>
-</main><div id="footer">
+    [else (~s item)])}</pre></div><h2>ok but what about an actual blog post</h2><p>problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…</p><p><span class="mono">-michael</span></p><footer><h3>footnotes</h3><p><a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!</p><p><a id="foot-2" href="#rev-2">²</a> because we totally still use 8.3 filesystems \s.</p><p><a id="foot-3" href="#rev-3">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.</p></footer>
+</main><div id="top-btn">
 <a href="#header">top ↑</a>
 </div>
 

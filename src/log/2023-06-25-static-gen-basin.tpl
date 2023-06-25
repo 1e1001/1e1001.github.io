@@ -52,7 +52,7 @@ to convert the s-expressions into text i have an intermediate type <code>tpl-doc
 problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
 <span class="mono">-michael</span>
 
-@:no-p{<footer id="footnotes"><hr /><h3>footnotes</h3>}
+@:no-p{<footer><h3>footnotes</h3>}
 <a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!
 <a id="foot-2" href="#rev-2">²</a> because we totally still use 8.3 filesystems \s.
 <a id="foot-3" href="#rev-3">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.

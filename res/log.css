@@ -6,8 +6,6 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
-	border-left: 1px solid rgb(var(--fg));
-	border-right: 1px solid rgb(var(--fg));
 	min-height: 100%;
 	padding-bottom: 40vh;
 }
@@ -26,12 +24,24 @@ body {
 h1, h2, h3, .code-title, .mono {
 	font-family: "Iosevka Fuck Web", monospace;
 }
-#header {
-	border-bottom: 1px solid rgb(var(--fg));
+header {
+	border: 1px solid rgb(var(--fg));
+	border-top: none;
 	padding: 5px;
 }
+footer {
+	border: 1px solid rgb(var(--fg));
+	border-bottom: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0 5px 2em;
+}
 hr {
+	border: none;
 	margin-left: -5px;
+	margin-right: -5px;
 	border-bottom: 1px solid rgb(var(--fg));
 }
 @media (max-width: 610px) {
@@ -45,8 +55,15 @@ hr {
 	#content {
 		padding: 0 10px;
 	}
-	#header {
-		padding-left: 10px;
+	header {
+		padding: 5px 10px;
+		border-left: none;
+		border-right: none;
+	}
+	footer {
+		padding: 0 10px 2em;
+		border-left: none;
+		border-right: none;
 	}
 	hr {
 		margin-left: -10px;
@@ -97,11 +114,7 @@ code::after {
 	content: "〉";
 	font-weight: 200;
 }
-#footnotes {
-	position: absolute;
-	bottom: 2em;
-}
-#footer {
+#top-btn {
 	position: absolute;
 	bottom: 5px;
 	right: 5px;

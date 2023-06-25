@@ -94,7 +94,7 @@
 @:[header]
 </header><main id="content">
 @tpl-doc[content]
-</main><div id="footer">
+</main><div id="top-btn">
 <a href="#header">top ↑</a>
 </div>
 @tpl-doc[{for/list ([mod mods]) (mod-body+ mod)}]
