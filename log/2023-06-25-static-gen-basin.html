@@ -15,7 +15,7 @@
 </svg></a>
 <a href="/log/" class="head-link">web log</a> <span style="float:right"><span title="posted date">2023-06-25</span></span>
 </header><main id="content">
-<h1 id='head'>static gen basin</h1><p>four days ago in the ‘#Writing Gaggle’ thread in the <a rel="noopener noreferrer" href="https://discord.com/rust-community">rpcls</a> server, this image was posted:</p><figure>
+<h1 id='head'>static gen basin</h1><p>four days ago in the ‘#Writing Gaggle’ thread in the <a rel="noopener noreferrer" href="https://discord.com/rust-lang-community">rpcls</a> server, this image was posted:</p><figure>
 <span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
 <span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
 <figcaption>Blogging vs. blog setups, <a rel="noopener noreferrer" href="https://rakhim.org/honestly-undefined/19/">rakhim.org</a>
@@ -101,7 +101,7 @@ Hello, tpl!</pre></div><p>seems pretty basic, but since you’ve got the whole o
          &quot;../fmt.tpl&quot;
          racket/file)
 @log-entry[#:date &quot;2023-06-25&quot; #:title &quot;static gen basin&quot;]{
-four days ago in the ‘#Writing Gaggle’ thread in the @ext-link[&quot;https://discord.com/rust-community&quot;]{rpcls} server, this image was posted:
+four days ago in the ‘#Writing Gaggle’ thread in the @ext-link[&quot;https://discord.com/rust-lang-community&quot;]{rpcls} server, this image was posted:
 @:no-p{&lt;figure&gt;
 &lt;span style=&quot;display:flex&quot;&gt;&lt;img src=&quot;https://rakhim.org/images/honestly-undefined/blogging.jpg&quot; alt=&quot;blogging.jpg&quot; /&gt;
 &lt;span&gt;&lt;span style=&quot;position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px&quot;&gt;&lt;b style=&quot;color:#000&quot;&gt;×&lt;/b&gt;&amp;nbsp;←&lt;i&gt;here&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -129,7 +129,7 @@ seems pretty basic, but since you’ve got the whole of &lt;code&gt;racket/base&
 there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.
 
 @:no-p{&lt;h2&gt;this ain’t your normal racket!&lt;/h2&gt;}
-what’s with all the @&quot;@&quot;’s? well the &lt;code&gt;#lang tpl racket/base&lt;/code&gt; doesn’t just just &lt;code&gt;racket/base&lt;/code&gt; as the language, but rather expands to something along the lines of:
+what’s with all the @&quot;@&quot;’s? well the &lt;code&gt;#lang tpl racket/base&lt;/code&gt; doesn’t just use &lt;code&gt;racket/base&lt;/code&gt; as the language, but rather expands to something along the lines of:
 @:no-p{@code-block[#:start +inf.0]{
 #lang at-exp racket/base
 (require tpl)
@@ -148,14 +148,14 @@ to convert the s-expressions into text i have an intermediate type &lt;code&gt;t
 }}
 @:no-p{&lt;h2&gt;ok but what about an actual blog post&lt;/h2&gt;}
 problem is i don&#39;t really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
--michael
+&lt;span class=&quot;mono&quot;&gt;-michael&lt;/span&gt;
 
 @:no-p{&lt;footer id=&quot;footnotes&quot;&gt;&lt;hr /&gt;&lt;h3&gt;footnotes&lt;/h3&gt;}
 &lt;a id=&quot;foot-1&quot; href=&quot;#rev-1&quot;&gt;¹&lt;/a&gt; in fact i also use tpl to manage my configuration files across my computers!
 &lt;a id=&quot;foot-2&quot; href=&quot;#rev-2&quot;&gt;²&lt;/a&gt; because we totally still use 8.3 filesystems \s.
 &lt;a id=&quot;foot-3&quot; href=&quot;#rev-3&quot;&gt;³&lt;/a&gt; technically, it just contains a modified copy of the implementaiton of &lt;code&gt;#lang at-exp&lt;/code&gt;, but that’s pretty much what it does.
 @:no-p{&lt;/footer&gt;}}
-</pre></div><p>there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.</p><h2>this ain’t your normal racket!</h2><p>what’s with all the @’s? well the <code>#lang tpl racket/base</code> doesn’t just just <code>racket/base</code> as the language, but rather expands to something along the lines of:</p><div class="code"><pre aria-hidden="true"></pre><pre role="code">
+</pre></div><p>there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.</p><h2>this ain’t your normal racket!</h2><p>what’s with all the @’s? well the <code>#lang tpl racket/base</code> doesn’t just use <code>racket/base</code> as the language, but rather expands to something along the lines of:</p><div class="code"><pre aria-hidden="true"></pre><pre role="code">
 #lang at-exp racket/base
 (require tpl)</pre></div><a id="rev-3" href="#foot-3">³</a><p>now the <code>at-exp</code> language is another one that takes another language as input, it adds the ability for you to use <a rel="noopener noreferrer" href="https://docs.racket-lang.org/scribble/reader.html">@-expressions</a>, which pretty much just become s-expressions, but they’re designed to allow more textual content, perfect for this use.</p><p>to convert the s-expressions into text i have an intermediate type <code>tpl-doc</code> — constructed by the tpl library functions like <code>:</code> or <code>:when</code> — which just stores a list of items, and then it calls <code>tpl-doc->string</code> to convert the document to a string with some fancy formatting.</p><div class='code-title'><b> tpl/main.rkt</b> @ <a rel="noopener noreferrer" href="https://github.com/1e1001/tpl/blob/3273591bbc957a5397d1e4633b55185238fcaec5/tpl/main.rkt#L65-L72">3273591</a><b></b></div><div class="code"><pre aria-hidden="true">65
 66
@@ -173,7 +173,7 @@ problem is i don&#39;t really have much to write about :), maybe now that i have
     [(void? item) ""]
     [(tpl-doc? item)
      (apply string-append (map tpl-doc->string (tpl-doc-v item)))]
-    [else (~s item)])}</pre></div><h2>ok but what about an actual blog post</h2><p>problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…</p><p>-michael</p><footer id="footnotes"><hr /><h3>footnotes</h3><p><a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!</p><p><a id="foot-2" href="#rev-2">²</a> because we totally still use 8.3 filesystems \s.</p><p><a id="foot-3" href="#rev-3">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.</p></footer>
+    [else (~s item)])}</pre></div><h2>ok but what about an actual blog post</h2><p>problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…</p><p><span class="mono">-michael</span></p><footer id="footnotes"><hr /><h3>footnotes</h3><p><a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!</p><p><a id="foot-2" href="#rev-2">²</a> because we totally still use 8.3 filesystems \s.</p><p><a id="foot-3" href="#rev-3">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.</p></footer>
 </main><div id="footer">
 <a href="#header">top ↑</a>
 </div>
