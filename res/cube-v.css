@@ -12,12 +12,12 @@
 }
 @keyframes cube-intro {
 	from {
-		transform: translateY(-10vw) translate(-50%, 0) rotateX(60deg) translateZ(-15vw);
+		transform: translateY(-5vw) translate(-50%, 0) rotateX(60deg) translateZ(-15vw);
 	}
 }
 @keyframes text-intro {
 	from {
-		transform: translate(0, -10vw);
+		transform: translate(0, -5vw);
 	}
 	to {
 		transform: none;

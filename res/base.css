@@ -13,13 +13,22 @@
 body {
 	color: rgb(var(--fg));
 	background-color: rgb(var(--bg)) !important;
-	font-family: sans-serif;
+}
+body, code, pre {
 	font-family: "Iosevka Fuck Web", monospace;
 }
-h1 {
+h1, h2, h3 {
 	margin: 0;
-	font-size: 3rem;
 	font-weight: 200;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.5rem;
 }
 a {
 	color: rgb(var(--fg));
@@ -27,11 +36,19 @@ a {
 a:hover, a:focus {
 	color: rgb(var(--bg));
 	outline: none;
-	background-color: white;
+	background-color: rgb(var(--fg));
+}
+a.inv-link {
+	text-decoration: none;
+}
+a.inv-link:hover, a.inv-link:focus {
+	color: rgb(var(--fg));
+	outline: none;
+	background: none;
 }
 a:active {
 	color: rgb(var(--fg));
-	background-color: none;
+	background: none;
 }
 .cens {
 	background-color: rgb(var(--fg));
@@ -41,4 +58,13 @@ a:hover .cens, a:focus .cens {
 }
 a .cens-js {
 	text-decoration: underline;
+}
+details.inner-arrow > summary {
+	list-style: none;
+}
+details.inner-arrow span.inner-arrow::after {
+	content: "▶";
+}
+details.inner-arrow[open] span.inner-arrow::after {
+	content: "▼";
 }
