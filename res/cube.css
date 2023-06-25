@@ -25,10 +25,10 @@ body {
 }
 @keyframes cube-fade-intro {
 	from {
-		border: 1vh solid black;
+		border: 1vh solid rgb(var(--bg));
 	}
 	to {
-		border: 1vh solid white;
+		border: 1vh solid rgb(var(--fg));
 	}
 }
 @keyframes text-fade-intro {
@@ -62,7 +62,7 @@ body {
 }
 .cube-fill {
 	position: absolute;
-	background-color: black;
+	background-color: rgb(var(--bg));
 	backface-visibility: hidden;
 	top: calc(3px - 1vh);
 	left: calc(3px - 1vh);
@@ -96,6 +96,6 @@ body {
 	left: 40vw;
 	width: calc(60vw - (40vw - 43vh) - 10px);
 	padding: 30vh 5px 5px;
-	background-color: #000000ef;
+	background-color: rgba(var(--bg), 0.9375);
 	min-height: 60vh;
 }

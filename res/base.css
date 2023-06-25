@@ -1,9 +1,18 @@
 @import url(./font/iosevka-fuck.css);
 :root {
 	font-size: 16px;
+	--fg: 0, 0, 0;
+	--bg: 255, 255, 255;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--fg: 255, 255, 255;
+		--bg: 0, 0, 0;
+	}
 }
 body {
-	color: white;
+	color: rgb(var(--fg));
+	background-color: rgb(var(--bg)) !important;
 	font-family: sans-serif;
 	font-family: "Iosevka Fuck Web", monospace;
 }
@@ -13,22 +22,22 @@ h1 {
 	font-weight: 200;
 }
 a {
-	color: white;
+	color: rgb(var(--fg));
 }
 a:hover, a:focus {
-	color: black;
+	color: rgb(var(--bg));
 	outline: none;
 	background-color: white;
 }
 a:active {
-	color: white;
+	color: rgb(var(--fg));
 	background-color: none;
 }
 .cens {
-	background-color: white;
+	background-color: rgb(var(--fg));
 }
 a:hover .cens, a:focus .cens {
-	background-color: black;
+	background-color: rgb(var(--bg));
 }
 a .cens-js {
 	text-decoration: underline;
