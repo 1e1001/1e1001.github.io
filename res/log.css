@@ -20,7 +20,11 @@ body {
 	}
 }
 #content {
+	font-family: "Helvetica Neue", "Helvetica", sans-serif;
 	padding: 0 5px;
+}
+h1, h2, h3, .code-title, .mono {
+	font-family: "Iosevka Fuck Web", monospace;
 }
 #header {
 	border-bottom: 1px solid rgb(var(--fg));

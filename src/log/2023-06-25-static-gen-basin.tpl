@@ -3,7 +3,7 @@
          "../fmt.tpl"
          racket/file)
 @log-entry[#:date "2023-06-25" #:title "static gen basin"]{
-four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.com/rust-community"]{rpcls} server, this image was posted:
+four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.com/rust-lang-community"]{rpcls} server, this image was posted:
 @:no-p{<figure>
 <span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
 <span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
@@ -31,7 +31,7 @@ seems pretty basic, but since you’ve got the whole of <code>racket/base</code>
 there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.
 
 @:no-p{<h2>this ain’t your normal racket!</h2>}
-what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> doesn’t just just <code>racket/base</code> as the language, but rather expands to something along the lines of:
+what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> doesn’t just use <code>racket/base</code> as the language, but rather expands to something along the lines of:
 @:no-p{@code-block[#:start +inf.0]{
 #lang at-exp racket/base
 (require tpl)
@@ -50,7 +50,7 @@ to convert the s-expressions into text i have an intermediate type <code>tpl-doc
 }}
 @:no-p{<h2>ok but what about an actual blog post</h2>}
 problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
--michael
+<span class="mono">-michael</span>
 
 @:no-p{<footer id="footnotes"><hr /><h3>footnotes</h3>}
 <a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!
