@@ -3,7 +3,7 @@
          "../fmt.tpl"
          racket/file)
 @log-entry[#:date "2023-06-25" #:title "static gen basin"]{
-four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.com/rust-lang-community"]{rpcls} server, this image was posted:
+four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.gg/rust-lang-community"]{rpcls} server, this image was posted:
 @:no-p{<figure>
 <span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
 <span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
