@@ -17,7 +17,7 @@
 @; figure out how matrix @ext-link["https://types.pl/@1e1001"]{matrix}
 @ext-link["https://youtube.com/@1e1001"]{youtube}</p>
 <p><b>WEBLOG</b>: <a href="/log/@log-entry-ref-id[(car (log-entries))].html">“@log-entry-ref-title[(car (log-entries))]”</a> + <a href="/log/">@:[(sub1 (length (log-entries)))] more</a></p>
-<details class="inner-arrow"><summary><b>PROJECTS</b>: <span class="inner-arrow"></span> expand for LIST</summary><ul style="margin:0">
+<details class="inner-arrow"><summary><b>PROJECTS</b>: <span class="inner-arrow"> expand for LIST</span></summary><ul style="margin:0">
 <h3 style="margin-left:-30px">current</h3>
 <li>programming language (not public)</li>
 @project-link["omnitrace"]{combinators for a variety of things}

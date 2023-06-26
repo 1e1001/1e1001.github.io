@@ -62,9 +62,23 @@ a .cens-js {
 details.inner-arrow > summary {
 	list-style: none;
 }
-details.inner-arrow span.inner-arrow::after {
+span.inner-arrow {
+	cursor: pointer;
+}
+details.inner-arrow > summary:focus {
+	outline: none;
+}
+span.inner-arrow:hover, details.inner-arrow > summary:focus span.inner-arrow {
+	color: rgb(var(--bg));
+	background-color: rgb(var(--fg));
+}
+span.inner-arrow:active {
+	color: rgb(var(--fg));
+	background: none;
+}
+span.inner-arrow::before {
 	content: "▶";
 }
-details.inner-arrow[open] span.inner-arrow::after {
+details.inner-arrow[open] span.inner-arrow::before {
 	content: "▼";
 }
