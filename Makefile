@@ -11,4 +11,4 @@ serve:
 autoserve:
 	(trap 'kill 0' SIGINT; make serve & make autobuild)
 clean:
-	find docs -mindepth 1 ! -regex "docs/res.*" -delete
+	find docs -mindepth 1 ! -regex "docs/res.*" ! -name favicon.ico -delete

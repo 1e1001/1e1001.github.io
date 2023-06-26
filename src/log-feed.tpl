@@ -10,7 +10,7 @@
 <author><name>1e1001</name><uri>https://1e1001.github.io/</uri></author>
 <id>tag:1e1001.github.io,2023-06-26:/log/</id>
 <generator uri="https://github.com/1e1001/tpl/">tpl</generator>
-<icon>/icon.png</icon><rights>CC BY-SA</rights>
+<icon>/res/icon.png</icon><rights>CC BY-SA</rights>
 @[tpl-doc {for/list ([entry (log-entries)])
 (define entry-id (log-entry-ref-id entry))
 (define entry-date (log-entry-ref-date entry))
