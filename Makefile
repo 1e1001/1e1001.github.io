@@ -11,5 +11,4 @@ serve:
 autoserve:
 	(trap 'kill 0' SIGINT; make serve & make autobuild)
 clean:
-	find docs ! -name res -type f -exec rm -f {} +
-	find docs/* ! -name res -type d
+	find docs -mindepth 1 ! -regex "docs/res.*" -delete
