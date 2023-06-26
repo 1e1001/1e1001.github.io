@@ -13,7 +13,7 @@
 <p><b>ELSEWHERE</b>:
 @ext-link["https://types.pl/@1e1001"]{mastodon}
 @ext-link["https://github.com/1e1001"]{github}
-@ext-link["https://discord.gg/PeHDzxt"]{discord}
+@ext-link["https://discord.gg/PeHDxzt"]{discord}
 @; figure out how matrix @ext-link["https://types.pl/@1e1001"]{matrix}
 @ext-link["https://youtube.com/@1e1001"]{youtube}</p>
 <p><b>WEBLOG</b>: <a href="/log/@log-entry-ref-id[(car (log-entries))].html">“@log-entry-ref-title[(car (log-entries))]”</a> + <a href="/log/">@:[(sub1 (length (log-entries)))] more</a></p>
