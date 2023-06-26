@@ -34,7 +34,7 @@
 }}
 {define+provide (code-block #:name [name #f] #:start [start 1] . body)
   (define body-lines (map {λ (line) (string-append "\n" line)}
-                          (string-split (tpl-doc->string (tpl-doc body)) "\n" #:trim? #f)))
+                          (string-split (html-escape (tpl-doc->string (tpl-doc body))) "\n" #:trim? #f)))
   (define max-line (string-length (number->string (sub1 (+ start (length body-lines))))))
   (define lines-text
     (build-list (length body-lines)

@@ -21,7 +21,7 @@ body {
 	font-family: "Helvetica Neue", "Helvetica", sans-serif;
 	padding: 0 5px;
 }
-h1, h2, h3, .code-title, .mono {
+h1, h2, h3, .code-title, .mono, .footnote {
 	font-family: "Iosevka Fuck Web", monospace;
 }
 header {

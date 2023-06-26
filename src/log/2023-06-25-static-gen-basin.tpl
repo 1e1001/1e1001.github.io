@@ -11,7 +11,7 @@ four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://disc
 </figcaption></figure>}
 at that time i didn’t have a blog, and now as of posting this i am at 0 blog posts to 1 blog post about elaborate blog setups, putting me right around <i>here</i> on the chart, hopefully i can shift that more upwards over time.
 @:no-p{<h2>my elaborate blog setup</h2>}
-the entirety of my new website is built in my own “static site generator”, @ext-link["https://github.com/1e1001/tpl/"]{tpl}. now tpl isn’t <i>only</i> a static site generator<a id="rev-1" href="#foot-1">¹</a>, i personally describe it as more of a text preprocessor, it lets you add preprocessing to text files, and it does so in quite a silly way. a <code>.tpl</code> file<a id="rev-2" href="#foot-2">²</a> is actually just a @ext-link["https://racket-lang.org/"]{racket} script, so your average tpl script looks like:
+the entirety of my new website is built in my own “static site generator”, @ext-link["https://github.com/1e1001/tpl/"]{tpl}. now tpl isn’t <i>only</i> a static site generator@footnote{in fact i also use tpl to manage my configuration files across my computers!}, i personally describe it as more of a text preprocessor, it lets you add preprocessing to text files, and it does so in quite a silly way. a <code>.tpl</code> file@footnote{because we totally still use 8.3 filesystems \s.} is actually just a @ext-link["https://racket-lang.org/"]{racket} script, so your average tpl script looks like:
 @:no-p{@code-block[#:name "input-file.tpl"]{
 #lang tpl racket/base
 {define (my-preprocess text) @"@":{Hello, @"@":[text]!}}
@@ -27,7 +27,7 @@ Hello, tpl!
 }}
 seems pretty basic, but since you’ve got the whole of <code>racket/base</code> (or whatever language you choose) you can do some pretty complex things, so for example this blog entry has a source that looks like:
 @; quines done the easy way :)
-@:no-p{@code-block[#:name "log/2023-06-25-static-gen-basin.tpl" (html-escape (file->string "log/2023-06-25-static-gen-basin.tpl"))]}
+@:no-p{@code-block[#:name "log/2023-06-25-static-gen-basin.tpl" (file->string "log/2023-06-25-static-gen-basin.tpl")]}
 there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.
 
 @:no-p{<h2>this ain’t your normal racket!</h2>}
@@ -35,7 +35,7 @@ what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> does
 @:no-p{@code-block[#:start +inf.0]{
 #lang at-exp racket/base
 (require tpl)
-}<a id="rev-3" href="#foot-3">³</a>}
+}@footnote{technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.}}
 now the <code>at-exp</code> language is another one that takes another language as input, it adds the ability for you to use @ext-link["https://docs.racket-lang.org/scribble/reader.html"]{@"@"-expressions}, which pretty much just become s-expressions, but they’re designed to allow more textual content, perfect for this use.
 to convert the s-expressions into text i have an intermediate type <code>tpl-doc</code> — constructed by the tpl library functions like <code>:</code> or <code>:when</code> — which just stores a list of items, and then it calls <code>tpl-doc->string</code> to convert the document to a string with some fancy formatting.
 @:no-p{@code-block[#:name @:{tpl/main.rkt</b> @"@" @ext-link["https://github.com/1e1001/tpl/blob/3273591bbc957a5397d1e4633b55185238fcaec5/tpl/main.rkt#L65-L72"]{3273591}<b>} #:start 65]{
@@ -51,9 +51,4 @@ to convert the s-expressions into text i have an intermediate type <code>tpl-doc
 @:no-p{<h2>ok but what about an actual blog post</h2>}
 problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
 <span class="mono">-michael</span>
-
-@:no-p{<footer><h3>footnotes</h3>}
-<a id="foot-1" href="#rev-1">¹</a> in fact i also use tpl to manage my configuration files across my computers!
-<a id="foot-2" href="#rev-2">²</a> because we totally still use 8.3 filesystems \s.
-<a id="foot-3" href="#rev-3">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.
-@:no-p{</footer>}}
+}
