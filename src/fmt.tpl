@@ -75,10 +75,10 @@
 </body></html>
 }}
 
-{define+provide (log-style #:title title #:mods [mods null] #:header header . content) @:{
+{define+provide (log-style #:title title #:desc desc #:mods [mods null] #:header header . content) @:{
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8" />
-<meta name="description" content=">>=" />
+<meta name="description" content="@:[desc]" />
 <meta name="generator" content="tpl" />
 <title>@:[title]</title>
 <link rel="stylesheet"type="text/css"href="/res/base.css">
@@ -94,9 +94,7 @@
 @:[header]
 </header><main id="content">
 @tpl-doc[content]
-</main><div id="top-btn">
-<a href="#header">top ↑</a>
-</div>
+</main>
 @tpl-doc[{for/list ([mod mods]) (mod-body+ mod)}]
 </body></html>
 }}

@@ -4,9 +4,13 @@
 build:
 	cd src; racket build.tpl
 autobuild:
+	make build
 	while inotifywait -r -e close_write src; do make build; done
 serve:
-	python -m http.server
+	cd docs; python -m http.server
 autoserve:
-	make serve &
-	make autobuild
+	(trap 'kill 0' SIGINT; make serve & make autobuild)
+clean:
+	rm -rvf docs
+	mkdir docs
+	ln -s ../res docs/res

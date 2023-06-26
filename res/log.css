@@ -6,8 +6,9 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
+	box-sizing: border-box;
 	min-height: 100%;
-	padding-bottom: 40vh;
+	padding-bottom: 20vh;
 }
 @keyframes fade-intro {
 	from {
@@ -19,7 +20,6 @@ body {
 }
 #content {
 	font-family: "Helvetica Neue", "Helvetica", sans-serif;
-	padding: 0 5px;
 }
 h1, h2, h3, .code-title, .mono, .footnote {
 	font-family: "Iosevka Fuck Web", monospace;
@@ -29,14 +29,9 @@ header {
 	border-top: none;
 	padding: 5px;
 }
-footer {
+.fullbox {
 	border: 1px solid rgb(var(--fg));
-	border-bottom: none;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 0 5px 2em;
+	padding: 0 5px;
 }
 hr {
 	border: none;
@@ -53,15 +48,16 @@ hr {
 		border: none;
 	}
 	#content {
-		padding: 0 10px;
+		padding: 0 5px;
 	}
 	header {
 		padding: 5px 10px;
 		border-left: none;
 		border-right: none;
 	}
-	footer {
-		padding: 0 10px 2em;
+	.fullbox {
+		padding: 0 10px;
+		margin: 0 -5px;
 		border-left: none;
 		border-right: none;
 	}
@@ -94,7 +90,7 @@ figcaption {
 	margin: 0;
 }
 .code > :first-child {
-	padding: 3px 0.5em;
+	padding: 3px 0.5em 3px 0;
 }
 .code > :last-child {
 	padding: 2px 5px;
@@ -103,7 +99,7 @@ figcaption {
 	overflow-x: scroll;
 }
 .code-title {
-	padding-left: calc(1.5em + 1px);
+	padding-left: calc(0.5em + 6px);
 	white-space: pre;
 }
 code::before {
@@ -113,9 +109,4 @@ code::before {
 code::after {
 	content: "〉";
 	font-weight: 200;
-}
-#top-btn {
-	position: absolute;
-	bottom: 5px;
-	right: 5px;
 }

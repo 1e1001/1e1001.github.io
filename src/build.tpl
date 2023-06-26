@@ -1,5 +1,6 @@
 #lang tpl racket/base
 (void (tpl-run* "./404.tpl"
-                "./index.tpl"
                 "./log.tpl"
+                "./log-feed.tpl"
+                "./index.tpl"
                 "./myfont.tpl"))

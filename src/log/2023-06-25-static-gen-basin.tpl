@@ -2,7 +2,7 @@
 (require "../log.tpl"
          "../fmt.tpl"
          racket/file)
-@log-entry[#:date "2023-06-25" #:title "static gen basin"]{
+@log-entry[#:date "2023-06-25" #:updated "2023-06-26" #:title "static gen basin" #:desc "in which i brag about my own library"]{
 four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.gg/rust-lang-community"]{rpcls} server, this image was posted:
 @:no-p{<figure>
 <span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
@@ -31,11 +31,11 @@ seems pretty basic, but since you’ve got the whole of <code>racket/base</code>
 there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.
 
 @:no-p{<h2>this ain’t your normal racket!</h2>}
-what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> doesn’t just use <code>racket/base</code> as the language, but rather expands to something along the lines of:
+what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> doesn’t just use <code>racket/base</code> as the language, but rather expands to something along the lines of:@footnote{technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.}
 @:no-p{@code-block[#:start +inf.0]{
 #lang at-exp racket/base
 (require tpl)
-}@footnote{technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.}}
+}}
 now the <code>at-exp</code> language is another one that takes another language as input, it adds the ability for you to use @ext-link["https://docs.racket-lang.org/scribble/reader.html"]{@"@"-expressions}, which pretty much just become s-expressions, but they’re designed to allow more textual content, perfect for this use.
 to convert the s-expressions into text i have an intermediate type <code>tpl-doc</code> — constructed by the tpl library functions like <code>:</code> or <code>:when</code> — which just stores a list of items, and then it calls <code>tpl-doc->string</code> to convert the document to a string with some fancy formatting.
 @:no-p{@code-block[#:name @:{tpl/main.rkt</b> @"@" @ext-link["https://github.com/1e1001/tpl/blob/3273591bbc957a5397d1e4633b55185238fcaec5/tpl/main.rkt#L65-L72"]{3273591}<b>} #:start 65]{
@@ -49,6 +49,6 @@ to convert the s-expressions into text i have an intermediate type <code>tpl-doc
     [else (~s item)])}
 }}
 @:no-p{<h2>ok but what about an actual blog post</h2>}
-problem is i don't really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
+problem is i don’t really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…
 <span class="mono">-michael</span>
 }
