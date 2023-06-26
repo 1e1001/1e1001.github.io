@@ -11,6 +11,5 @@ serve:
 autoserve:
 	(trap 'kill 0' SIGINT; make serve & make autobuild)
 clean:
-	rm -rvf docs
-	mkdir docs
-	ln -s ../res docs/res
+	find docs ! -name res -type f -exec rm -f {} +
+	find docs/* ! -name res -type d
