@@ -44,7 +44,7 @@ hr {
 	margin-right: -5px;
 	border-bottom: 1px solid rgb(var(--fg));
 }
-@media (max-width: 610px) {
+@media (max-width: 610px), (max-aspect-ratio: 2/3) {
 	body {
 		min-width: 0;
 		width: 100%;

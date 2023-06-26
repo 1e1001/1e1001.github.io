@@ -16,7 +16,6 @@ body {
 	transform-style: preserve-3d;
 	width: 30vh;
 	height: 30vh;
-	opacity: 1;
 }
 @keyframes cube-intro {
 	from {
