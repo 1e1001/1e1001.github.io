@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-<link rel="self" href="https://1e1001.github.io/log/feed.xml"/>
+<link rel="self" href="https://1e1001.github.io/log/atom.xml"/>
 <link href="/log/"/><title>1e1001</title><subtitle>&gt;&gt;=</subtitle>
-<updated>2023-06-26</updated>
+<updated>2023-06-26T00:00:00Z</updated>
 <author><name>1e1001</name><uri>https://1e1001.github.io/</uri></author>
 <id>tag:1e1001.github.io,2023-06-26:/log/</id>
-<generator url="https://github.com/1e1001/tpl/">tpl</generator>
+<generator uri="https://github.com/1e1001/tpl/">tpl</generator>
 <icon>/icon.png</icon><rights>CC BY-SA</rights>
 <entry>
 <id>tag:1e1001.github.io,2023-06-25:/log/2023-06-25-static-gen-basin.html</id>
 <title>static gen basin</title>
-<updated>2023-06-26</updated>
-<published>2023-06-25</published>
+<updated>2023-06-26T00:00:00Z</updated>
+<published>2023-06-25T00:00:00Z</published>
 <link href="/log/2023-06-25-static-gen-basin.html"/>
 <summary>in which i brag about my own library</summary>
 </entry></feed>
