@@ -1,3 +1,4 @@
+if (!window.matchMedia(`(prefers-reduced-motion:reduce)`).matches){
 var chs_blk=new Uint32Array([173,994,1566,2260,4096,4306,5120,7675,8452,8592,9312,11361,12032,12832,13056,19904,40960,42192,42560,42775,44032,57344,64467,65142,65281,])
 var chl_blk=new Uint32Array([5,2,1,1,1,2,5,2,1,4,14,1,1,1,53,164,9,2,1,1,87,52,2,1,1,])
 var chi_blk=0
@@ -52,4 +53,4 @@ function frame() {
 		lst[i][0].innerText = ch.join("");
 	}
 }
-frame();
+frame()}
