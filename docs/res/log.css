@@ -79,34 +79,3 @@ a:hover > #logo > path, a:focus > #logo > path {
 img {
 	width: 100%;
 }
-figcaption {
-	border-bottom: 1px solid rgb(var(--fg));
-	padding: 10px 0 5px;
-}
-.code {
-	display: flex;
-}
-.code > pre {
-	margin: 0;
-}
-.code > :first-child {
-	padding: 3px 0.5em 3px 0;
-}
-.code > :last-child {
-	padding: 2px 5px;
-	flex-grow: 1;
-	border: 1px solid rgb(var(--fg));
-	overflow-x: scroll;
-}
-.code-title {
-	padding-left: calc(0.5em + 6px);
-	white-space: pre;
-}
-code::before {
-	content: "〈";
-	font-weight: 200;
-}
-code::after {
-	content: "〉";
-	font-weight: 200;
-}

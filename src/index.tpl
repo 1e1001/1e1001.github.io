@@ -39,6 +39,6 @@
 @project-link["advent-of-code"]{advent of code 2022}
 @project-link["des-asm"]{desmos art contest 2022}
 </ul></details>
-<p><b>MY FONT</b>: <a href="./myfont.html">“Iosevka F<span class="cens">uck</span>”</a> (custom Iosevka)</p>
+<p><b>MY FONT</b>: <a href="./font.html">“Iosevka F<span class="cens">uck</span>”</a> (custom Iosevka)</p>
 <p><b>MORE</b>: will be added at a later time.</p>
 }}

@@ -56,8 +56,13 @@ a:active {
 a:hover .cens, a:focus .cens {
 	background-color: rgb(var(--bg));
 }
-a .cens-js {
-	text-decoration: underline;
+.cens-js > span {
+	color: transparent;
+}
+.cens-js::before {
+	content: attr(data-c);
+	pointer-events: none;
+	position: absolute;
 }
 details.inner-arrow > summary {
 	list-style: none;
@@ -81,4 +86,35 @@ span.inner-arrow::before {
 }
 details.inner-arrow[open] span.inner-arrow::before {
 	content: "▼";
+}
+figcaption {
+	border-bottom: 1px solid rgb(var(--fg));
+	padding: 10px 0 5px;
+}
+.code {
+	display: flex;
+}
+.code > pre {
+	margin: 0;
+}
+.code > :first-child {
+	padding: 3px 0.5em 3px 0;
+}
+.code > :last-child {
+	padding: 2px 5px;
+	flex-grow: 1;
+	border: 1px solid rgb(var(--fg));
+	overflow-x: scroll;
+}
+.code-title {
+	padding-left: calc(0.5em + 6px);
+	white-space: pre;
+}
+code::before {
+	content: "〈";
+	font-weight: 200;
+}
+code::after {
+	content: "〉";
+	font-weight: 200;
 }
