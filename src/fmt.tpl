@@ -79,7 +79,7 @@
 {define+provide (log-style #:title title #:desc desc #:mods [mods null] #:header header . content) @:{
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8" />
-<meta name="description" content="@:[desc]" />
+<meta name="description" content=">>= @:[desc]" />
 <meta name="generator" content="tpl" />
 <title>@:[title]</title>
 <link rel="stylesheet"type="text/css"href="/res/base.css">
