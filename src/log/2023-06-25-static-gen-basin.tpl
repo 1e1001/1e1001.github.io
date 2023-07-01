@@ -6,7 +6,7 @@
 four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.gg/rust-lang-community"]{rpcls} server, this image was posted:
 @:no-p{<figure>
 <span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
-<span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px"><b style="color:#000" class="mono">×</b>&nbsp;←<i>here</i></span></span></span>
+<span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px" class="mono"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
 <figcaption>Blogging vs. blog setups, @ext-link["https://rakhim.org/honestly-undefined/19/"]{rakhim.org}
 </figcaption></figure>}
 at that time i didn’t have a blog, and now as of posting this i am at 0 blog posts to 1 blog post about elaborate blog setups, putting me right around <i>here</i> on the chart, hopefully i can shift that more upwards over time.
