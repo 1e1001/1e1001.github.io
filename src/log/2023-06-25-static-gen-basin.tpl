@@ -9,7 +9,7 @@ four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://disc
 <span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px" class="mono"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
 <figcaption>Blogging vs. blog setups, @ext-link["https://rakhim.org/honestly-undefined/19/"]{rakhim.org}
 </figcaption></figure>}
-at that time i didn’t have a blog, and now as of posting this i am at 0 blog posts to 1 blog post about elaborate blog setups, putting me right around <i>here</i> on the chart, hopefully i can shift that more upwards over time.
+at that time i didn’t have a blog, and now as of posting this i am at 0 blog posts to 1 blog post about elaborate blog setups, putting me right around <i class="mono">here</i> on the chart, hopefully i can shift that more upwards over time.
 @:no-p{<h2>my elaborate blog setup</h2>}
 the entirety of my new website is built in my own “static site generator”, @ext-link["https://github.com/1e1001/tpl/"]{tpl}. now tpl isn’t <i>only</i> a static site generator@footnote{in fact i also use tpl to manage my configuration files across my computers!}, i personally describe it as more of a text preprocessor, it lets you add preprocessing to text files, and it does so in quite a silly way. a <code>.tpl</code> file@footnote{because we totally still use 8.3 filesystems \s.} is actually just a @ext-link["https://racket-lang.org/"]{racket} script, so your average tpl script looks like:
 @:no-p{@code-block[#:name "input-file.tpl"]{
