@@ -19,7 +19,7 @@
 — in which i brag about my own library
 <p>four days ago in the ‘#Writing Gaggle’ thread in the <a rel="noopener noreferrer" href="https://discord.gg/rust-lang-community">rpcls</a> server, this image was posted:</p><figure>
 <span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
-<span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
+<span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px"><b style="color:#000" class="mono">×</b>&nbsp;←<i>here</i></span></span></span>
 <figcaption>Blogging vs. blog setups, <a rel="noopener noreferrer" href="https://rakhim.org/honestly-undefined/19/">rakhim.org</a>
 </figcaption></figure><p>at that time i didn’t have a blog, and now as of posting this i am at 0 blog posts to 1 blog post about elaborate blog setups, putting me right around <i>here</i> on the chart, hopefully i can shift that more upwards over time.</p><h2>my elaborate blog setup</h2><p>the entirety of my new website is built in my own “static site generator”, <a rel="noopener noreferrer" href="https://github.com/1e1001/tpl/">tpl</a>. now tpl isn’t <i>only</i> a static site generator<a class="footnote" id="rev-1" href="#foot-1">¹</a>, i personally describe it as more of a text preprocessor, it lets you add preprocessing to text files, and it does so in quite a silly way. a <code>.tpl</code> file<a class="footnote" id="rev-2" href="#foot-2">²</a> is actually just a <a rel="noopener noreferrer" href="https://racket-lang.org/">racket</a> script, so your average tpl script looks like:</p><div class='code-title'><b>input-file.tpl</b></div><div class="code"><pre aria-hidden="true">1
 2
@@ -101,7 +101,7 @@ Hello, tpl!</pre></div><p>seems pretty basic, but since you’ve got the whole o
 four days ago in the ‘#Writing Gaggle’ thread in the @ext-link[&quot;https://discord.gg/rust-lang-community&quot;]{rpcls} server, this image was posted:
 @:no-p{&lt;figure&gt;
 &lt;span style=&quot;display:flex&quot;&gt;&lt;img src=&quot;https://rakhim.org/images/honestly-undefined/blogging.jpg&quot; alt=&quot;blogging.jpg&quot; /&gt;
-&lt;span&gt;&lt;span style=&quot;position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px&quot;&gt;&lt;b style=&quot;color:#000&quot;&gt;×&lt;/b&gt;&amp;nbsp;←&lt;i&gt;here&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span&gt;&lt;span style=&quot;position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px&quot;&gt;&lt;b style=&quot;color:#000&quot; class=&quot;mono&quot;&gt;×&lt;/b&gt;&amp;nbsp;←&lt;i&gt;here&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;figcaption&gt;Blogging vs. blog setups, @ext-link[&quot;https://rakhim.org/honestly-undefined/19/&quot;]{rakhim.org}
 &lt;/figcaption&gt;&lt;/figure&gt;}
 at that time i didn’t have a blog, and now as of posting this i am at 0 blog posts to 1 blog post about elaborate blog setups, putting me right around &lt;i&gt;here&lt;/i&gt; on the chart, hopefully i can shift that more upwards over time.
