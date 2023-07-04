@@ -5,7 +5,7 @@
 @log-entry[#:date "2023-06-25" #:updated "2023-06-26" #:title "static gen basin" #:desc "in which i brag about my own library"]{
 four days ago in the ‘#Writing Gaggle’ thread in the @ext-link["https://discord.gg/rust-lang-community"]{rpcls} server, this image was posted:
 @:no-p{<figure>
-<span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" alt="blogging.jpg" />
+<span style="display:flex"><img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" width="1994" height="1435" alt="blogging.jpg" />
 <span><span style="position:relative;left:calc(5px - 2ex);top:calc(78% - 0.5em);margin-right:-30px" class="mono"><b style="color:#000">×</b>&nbsp;←<i>here</i></span></span></span>
 <figcaption>Blogging vs. blog setups, @ext-link["https://rakhim.org/honestly-undefined/19/"]{rakhim.org}
 </figcaption></figure>}

@@ -78,4 +78,5 @@ a:hover > #logo > path, a:focus > #logo > path {
 }
 img {
 	width: 100%;
+	height: auto;
 }

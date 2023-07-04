@@ -51,12 +51,13 @@
   @:{
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8" />
-<meta name="description" content=">>=" />
-<meta name="generator" content="tpl" />
+<meta name="description"content=">>=" />
+<meta name="generator"content="tpl" />
+<meta name="viewport"content="width=device-width,initial-scale=1" />
 <title>@:[title]</title>
-<link rel="stylesheet"type="text/css"href="/res/base.css">
-<link rel="stylesheet"type="text/css"href="/res/cube.css">
-<link rel="stylesheet"type="text/css"media="max-aspect-ratio:6/5"href="/res/cube-v.css">
+<link rel="stylesheet"type="text/css"href="/res/base.css"/>
+<link rel="stylesheet"type="text/css"href="/res/cube.css"/>
+<link rel="stylesheet"type="text/css"media="(max-aspect-ratio:6/5)"href="/res/cube-v.css"/>
 @tpl-doc[{for/list ([mod mods]) (mod-head+ mod)}]
 </head><body>
 <@if[mod-cube? "div" "a class='inv-link' href='/'"] id="cube"><div id="cube-spin"><div class="cube-face"></div>
@@ -79,11 +80,12 @@
 {define+provide (log-style #:title title #:desc desc #:mods [mods null] #:header header . content) @:{
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8" />
-<meta name="description" content=">>= @:[desc]" />
-<meta name="generator" content="tpl" />
+<meta name="description"content=">>= @:[desc]" />
+<meta name="generator"content="tpl" />
+<meta name="viewport"content="width=device-width,initial-scale=1" />
 <title>@:[title]</title>
-<link rel="stylesheet"type="text/css"href="/res/base.css">
-<link rel="stylesheet"type="text/css"href="/res/log.css">
+<link rel="stylesheet"type="text/css"href="/res/base.css"/>
+<link rel="stylesheet"type="text/css"href="/res/log.css"/>
 @tpl-doc[{for/list ([mod mods]) (mod-head+ mod)}]
 </head><body><header id="header">
 <a href="/" class="head-link" aria-label="home"><svg viewBox="0 0 1 1" role="img" id="logo">
