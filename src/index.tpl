@@ -22,9 +22,10 @@
 <h3 style="margin-left:-30px">current</h3>
 <li>programming language (not public)</li>
 @project-link["omnitrace"]{combinators for a variety of things}
-@project-link["gamework" #:user "devpty"]{lower-level game framework in rust}
+<li>gamework (not public): lower-level game framework in rust</li>
 <h3 style="margin-left:-30px">finished</h3>
 @project-link["miny"]{rust <code>Box&lt;T&gt;</code> with size optimizations}
+@project-link["source-clock"]{<a href="/log/2023-07-18-source-code-clock.html">restored source code of a clock</a>}
 @project-link["tpl"]{macro preprocessor / file template library (used to make this SITE)}
 @project-link["every-float"]{every FLOAT}
 @project-link["punch-card"]{punched card literals for rust}
