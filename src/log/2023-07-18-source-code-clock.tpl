@@ -18,7 +18,7 @@ and by “my dad and i” i mean “my dad made it and i watched”, his making 
 but i don’t really wanna buy four seven-segment displays for that. with the original clock however, it turned out that dad lost the source code for it (reasonable as it was already a finished thing), so in order to change anything about it i’d need to get a new source code
 @:no-p{<h2>attempt 1: try and reverse-engineer the existing binary</h2>}
 as it turns out, with <code>avrdude</code> (the tool for flashing avr microcontrollers, like the one in the arduino) you can read the current program from the chip into a file, doing so gave me @ext-link["https://github.com/1e1001/source-clock/raw/main/original.bin"]{this 32KiB dump}, however i’m lazy and can’t be bothered to learn how avr assembly works or figure out how to decompile it back to vague c++ (also doesn’t help that like all embedded projects are <code>-Os</code> since you’ve got very little flash space).
-feel free to try and reverse-engineer it yourself, however i instead chose to just write a new source for it
+feel free to @ext-link["https://github.com/1e1001/source-clock/raw/main/original.bin"]{try and reverse-engineer it yourself}, however i instead chose to just write a new source for it
 @:no-p{<h2>attempt 2: rewrite it in rust</h2>}
 but first: a quick list of the hardware:
 @:no-p{<ul>
