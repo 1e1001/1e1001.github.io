@@ -25,19 +25,19 @@ h1, h2, h3, .code-title, .mono, .footnote {
 	font-family: "Iosevka Fuck Web", monospace;
 }
 header {
-	border: 1px solid rgb(var(--fg));
+	border: 1px solid rgb(var(--fc));
 	border-top: none;
 	padding: 5px;
 }
 .fullbox {
-	border: 1px solid rgb(var(--fg));
+	border: 1px solid rgb(var(--fc));
 	padding: 0 5px;
 }
 hr {
 	border: none;
 	margin-left: -5px;
 	margin-right: -5px;
-	border-bottom: 1px solid rgb(var(--fg));
+	border-bottom: 1px solid rgb(var(--fc));
 }
 @media (max-width: 610px), (max-aspect-ratio: 2/3) {
 	body {
@@ -71,7 +71,7 @@ hr {
 	margin-right: 0.1em;
 }
 a:hover > #logo > path, a:focus > #logo > path {
-	fill: rgb(var(--bg));
+	fill: rgb(var(--bc));
 }
 .head-link {
 	text-decoration: none;

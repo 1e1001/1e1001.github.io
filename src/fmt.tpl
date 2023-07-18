@@ -18,12 +18,18 @@
    'body+ @:{
 @:when[(string? data)]{<script>l=@:[data]</script>}
 <script src="/res/cube.js"></script>})}
+{define+provide mod-code-select
+  (make-mod
+   'head+ @:{@; thanks, Eric!
+<script>var mcs_first=0;window.addEventListener('click', function(e,s,r){if(e.target.nodeName=='PRE'){if(e.detail==2)mcs_first=Date.now();else if(e.detail==3&&Date.now()-mcs_first<1000){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}}});</script>
+})}
 {define+provide (html-escape text)
   {let loop ([text text]
              [rules '(("&" . "&amp;")
                       ("<" . "&lt;")
                       (">" . "&gt;")
                       ("\"" . "&quot;")
+                      ("\t" . "&Tab;")
                       ("'" . "&#39;"))])
     (if (null? rules)
         text
@@ -62,9 +68,9 @@
 </head><body>
 <@if[mod-cube? "div" "a class='inv-link' href='/'"] id="cube"><div id="cube-spin"><div class="cube-face"></div>
 <div class="cube-face" id="f4"><svg viewBox="0 0 1 1" role="img" id="logo">
-<path fill="rgb(var(--fg))"id="f5"d="M.635234.5613285L.81875.3778125L.7390625.298125L.522539.5146485L.522539.925L.63523.925"/>
-<path fill="rgb(var(--fg))"id="f6"d="M.364766.5613285L.364766.925L.477461.925L.477461.5146485L.2609375.298125L.18125.3778125"/>
-<path fill="rgb(var(--fg))"id="f7"d="M.18125.1546875L.5.4734375L.81875.1546875L.7390625.075L.5.3140625L.2609375.075"/>
+<path fill="rgb(var(--fc))"id="f5"d="M.635234.5613285L.81875.3778125L.7390625.298125L.522539.5146485L.522539.925L.63523.925"/>
+<path fill="rgb(var(--fc))"id="f6"d="M.364766.5613285L.364766.925L.477461.925L.477461.5146485L.2609375.298125L.18125.3778125"/>
+<path fill="rgb(var(--fc))"id="f7"d="M.18125.1546875L.5.4734375L.81875.1546875L.7390625.075L.5.3140625L.2609375.075"/>
 </svg><div class="cube-fill"></div></div>
 <div class="cube-face"id="f0"><div class="cube-fill"></div></div>
 <div class="cube-face"id="f1"><div class="cube-fill"></div></div>
@@ -90,9 +96,9 @@
 </head><body><header id="header">
 <a href="/" class="head-link" aria-label="home"><svg viewBox="0 0 1 1" role="img" id="logo">
 <title>&gt;&gt;=</title>
-<path fill="rgb(var(--fg))"d="M.5613285.364766L.3778125.18125L.298125.2609375L.5146485.477461L.925.477461L.925.36477"/>
-<path fill="rgb(var(--fg))"d="M.5613285.635234L.925.635234L.925.522539L.5146485.522539L.298125.7390625L.3778125.81875"/>
-<path fill="rgb(var(--fg))"d="M.1546875.81875L.4734375.5L.1546875.18125L.075.2609375L.3140625.5L.075.7390625"/>
+<path fill="rgb(var(--fc))"d="M.5613285.364766L.3778125.18125L.298125.2609375L.5146485.477461L.925.477461L.925.36477"/>
+<path fill="rgb(var(--fc))"d="M.5613285.635234L.925.635234L.925.522539L.5146485.522539L.298125.7390625L.3778125.81875"/>
+<path fill="rgb(var(--fc))"d="M.1546875.81875L.4734375.5L.1546875.18125L.075.2609375L.3140625.5L.075.7390625"/>
 </svg></a>
 @:[header]
 </header><main id="content">

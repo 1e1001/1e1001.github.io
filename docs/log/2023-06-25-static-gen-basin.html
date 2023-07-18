@@ -6,13 +6,13 @@
 <title>static gen basin - 1e1001</title>
 <link rel="stylesheet"type="text/css"href="/res/base.css"/>
 <link rel="stylesheet"type="text/css"href="/res/log.css"/>
-
+<script>var mcs_first=0;window.addEventListener('click', function(e,s,r){if(e.target.nodeName=='PRE'){if(e.detail==2)mcs_first=Date.now();else if(e.detail==3&&Date.now()-mcs_first<1000){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}}});</script>
 </head><body><header id="header">
 <a href="/" class="head-link" aria-label="home"><svg viewBox="0 0 1 1" role="img" id="logo">
 <title>&gt;&gt;=</title>
-<path fill="rgb(var(--fg))"d="M.5613285.364766L.3778125.18125L.298125.2609375L.5146485.477461L.925.477461L.925.36477"/>
-<path fill="rgb(var(--fg))"d="M.5613285.635234L.925.635234L.925.522539L.5146485.522539L.298125.7390625L.3778125.81875"/>
-<path fill="rgb(var(--fg))"d="M.1546875.81875L.4734375.5L.1546875.18125L.075.2609375L.3140625.5L.075.7390625"/>
+<path fill="rgb(var(--fc))"d="M.5613285.364766L.3778125.18125L.298125.2609375L.5146485.477461L.925.477461L.925.36477"/>
+<path fill="rgb(var(--fc))"d="M.5613285.635234L.925.635234L.925.522539L.5146485.522539L.298125.7390625L.3778125.81875"/>
+<path fill="rgb(var(--fc))"d="M.1546875.81875L.4734375.5L.1546875.18125L.075.2609375L.3140625.5L.075.7390625"/>
 </svg></a>
 <a href="/log/" class="head-link">web log</a> <span style="float:right"><span title="posted date">2023-06-25</span> · <span title="updated date">2023-06-26</span></span>
 </header><main id="content">
@@ -98,7 +98,7 @@ Hello, tpl!</pre></div><p>seems pretty basic, but since you’ve got the whole o
 (require &quot;../log.tpl&quot;
          &quot;../fmt.tpl&quot;
          racket/file)
-@log-entry[#:date &quot;2023-06-25&quot; #:updated &quot;2023-06-26&quot; #:title &quot;static gen basin&quot; #:desc &quot;in which i brag about my own library&quot;]{
+@log-entry[#:date &quot;2023-06-25&quot; #:updated &quot;2023-06-26&quot; #:title &quot;static gen basin&quot; #:desc &quot;in which i brag about my own library&quot; #:mods (list mod-code-select)]{
 four days ago in the ‘#Writing Gaggle’ thread in the @ext-link[&quot;https://discord.gg/rust-lang-community&quot;]{rpcls} server, this image was posted:
 @:no-p{&lt;figure&gt;
 &lt;span style=&quot;display:flex&quot;&gt;&lt;img src=&quot;https://rakhim.org/images/honestly-undefined/blogging.jpg&quot; width=&quot;1994&quot; height=&quot;1435&quot; alt=&quot;blogging.jpg&quot; /&gt;

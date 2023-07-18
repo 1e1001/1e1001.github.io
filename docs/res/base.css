@@ -1,18 +1,22 @@
 @import url(./font/iosevka-fuck.css);
 :root {
 	font-size: 16px;
-	--fg: 0, 0, 0;
-	--bg: 255, 255, 255;
+	--fc: 0, 0, 0;
+	--bc: 255, 255, 255;
+	--ft: 0;
+	--bt: 1;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
-		--fg: 255, 255, 255;
-		--bg: 0, 0, 0;
+		--fc: 255, 255, 255;
+		--bc: 0, 0, 0;
+		--ft: 1;
+		--bt: 0;
 	}
 }
 body {
-	color: rgb(var(--fg));
-	background-color: rgb(var(--bg)) !important;
+	color: rgb(var(--fc));
+	background-color: rgb(var(--bc)) !important;
 }
 body, code, pre {
 	font-family: "Iosevka Fuck Web", monospace;
@@ -31,30 +35,30 @@ h3 {
 	font-size: 1.5rem;
 }
 a {
-	color: rgb(var(--fg));
+	color: rgb(var(--fc));
 }
 a:hover, a:focus {
-	color: rgb(var(--bg));
+	color: rgb(var(--bc));
 	outline: none;
-	background-color: rgb(var(--fg));
+	background-color: rgb(var(--fc));
 }
 a.inv-link {
 	text-decoration: none;
 }
 a.inv-link:hover, a.inv-link:focus {
-	color: rgb(var(--fg));
+	color: rgb(var(--fc));
 	outline: none;
 	background: none;
 }
 a:active {
-	color: rgb(var(--fg));
+	color: rgb(var(--fc));
 	background: none;
 }
 .cens {
-	background-color: rgb(var(--fg));
+	background-color: rgb(var(--fc));
 }
 a:hover .cens, a:focus .cens {
-	background-color: rgb(var(--bg));
+	background-color: rgb(var(--bc));
 }
 .cens-js > span {
 	color: transparent;
@@ -74,11 +78,11 @@ details.inner-arrow > summary:focus {
 	outline: none;
 }
 span.inner-arrow:hover, details.inner-arrow > summary:focus span.inner-arrow {
-	color: rgb(var(--bg));
-	background-color: rgb(var(--fg));
+	color: rgb(var(--bc));
+	background-color: rgb(var(--fc));
 }
 span.inner-arrow:active {
-	color: rgb(var(--fg));
+	color: rgb(var(--fc));
 	background: none;
 }
 span.inner-arrow::before {
@@ -88,7 +92,7 @@ details.inner-arrow[open] span.inner-arrow::before {
 	content: "▼";
 }
 figcaption {
-	border-bottom: 1px solid rgb(var(--fg));
+	border-bottom: 1px solid rgb(var(--fc));
 	padding: 10px 0 5px;
 }
 .code {
@@ -103,7 +107,7 @@ figcaption {
 .code > :last-child {
 	padding: 2px 5px;
 	flex-grow: 1;
-	border: 1px solid rgb(var(--fg));
+	border: 1px solid rgb(var(--fc));
 	overflow-x: scroll;
 }
 .code-title {
@@ -113,8 +117,13 @@ figcaption {
 code::before {
 	content: "〈";
 	font-weight: 200;
+	font-family: "Iosevka Fuck Web", monospace;
 }
 code::after {
 	content: "〉";
 	font-weight: 200;
+	font-family: "Iosevka Fuck Web", monospace;
+}
+.img-pixel {
+	image-rendering: crisp-edges;
 }
