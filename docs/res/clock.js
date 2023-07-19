@@ -4,7 +4,6 @@ canvas.width=200
 canvas.height=76
 canvas.className="img-pixel"
 canvas.style.width="100%"
-document.getElementById("clock-id").replaceWith(canvas);
 var ctx=canvas.getContext("2d")
 var sheet=new Image()
 sheet.src="/res/media/clock-idb.png"
@@ -33,4 +32,6 @@ ctx.drawImage(sheet,170,6,4,15,149,47,4,15)}
 digit_at((n=n/10|0),110,41)
 digit_at((n=time.getMilliseconds()/10|0)%10,176,41)
 digit_at((n=n/10|0)%10,155,41)
-}sheet.onload=frame}
+}sheet.onload=function(){
+document.getElementById("clock-id").replaceWith(canvas)
+frame()}}
