@@ -1,7 +1,7 @@
 #lang tpl racket/base
 (require "fmt.tpl")
 @tpl[(output/file "../docs/font.html")]{
-@cube-style[#:title "my font - 1e1001" #:mods (list mod-cens)]{
+@cube-style[#:title "my font - 1e1001" #:mods (list mod-cens mod-code-select)]{
 <h1>my font</h1>
 <p>custom build of @ext-link["https://typeof.net/Iosevka"]{Iosevka}, aptly named Iosevka F<span class="cens">uck</span>.</p>
 <p><code>git clone https://github.com/be5invis/Iosevka && cd Iosevka</code></p>
