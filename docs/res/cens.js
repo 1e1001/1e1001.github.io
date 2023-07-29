@@ -3,18 +3,22 @@ var table='0123456789¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾�
 var ctx=document.createElement("canvas").getContext("2d")
 ctx.font="400 16px Iosevka Fuck Web"
 function text_size(text){return ctx.measureText(text).width}
-let ch_width=text_size("_");
-var lst=Array.from(document.getElementsByClassName("cens"))
+var ch_width=0,lst=Array.from(document.getElementsByClassName("cens"))
+function frame1(){
+ch_width=text_size("_");
+if(ch_width>0){
 for(var i=0;i<lst.length;++i){
 var o=lst[i]
 lst[i]=[o,Math.floor(text_size(o.innerText)/ch_width+.1)]
 o.className="cens-js"
 o.innerHTML="<span>"+o.innerHTML+"</span>"}
-function frame(){
-requestAnimationFrame(frame)
+requestAnimationFrame(frame2)}else
+requestAnimationFrame(frame1)}
+function frame2(){
+requestAnimationFrame(frame2)
 for(var i=0;i<lst.length;++i){
 var ch=new Array(lst[i][1])
 for(var j=0;j<ch.length;++j)
 ch[j]=table[Math.floor(Math.random()*table.length)]
 lst[i][0].setAttribute("data-c",ch.join(""))
-}}frame()}
+}}frame1()}
