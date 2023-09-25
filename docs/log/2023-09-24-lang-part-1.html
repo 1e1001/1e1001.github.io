@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8" />
-<meta name="description"content=">>= when will we get “rewrite-it-in-asyl”" />
+<meta name="description"content=">>= in which i propose a language concept" />
 <meta name="generator"content="tpl" />
 <meta name="viewport"content="width=device-width,initial-scale=1" />
 <title>programming language; part 1 - 1e1001</title>
@@ -14,11 +14,11 @@
 <path fill="rgb(var(--fc))"d="M.5613285.635234L.925.635234L.925.522539L.5146485.522539L.298125.7390625L.3778125.81875"/>
 <path fill="rgb(var(--fc))"d="M.1546875.81875L.4734375.5L.1546875.18125L.075.2609375L.3140625.5L.075.7390625"/>
 </svg></a>
-<a href="/log/" class="head-link">web log</a> <span style="float:right"><span title="posted date">2023-09-24</span></span>
+<a href="/log/" class="head-link">web log</a> <span style="float:right"><span title="posted date">2023-09-24</span> · <span title="updated date">2023-09-24</span></span>
 </header><main id="content">
 <h1>programming language; part 1</h1>
-— when will we get “rewrite-it-in-asyl”
-<p>over the years i have attempted to make many programming languages, often it’s something very silly and esoteric like “lazers” (weird 2d language), that one regex replacement language (bad <a rel="noopener noreferrer" href="https://esolangs.org/wiki////">///</a> clone), or no semicolon C (which isn’t really a language, but it’s language adjacent so i’ll count it here). However over the past 6 or so years i’ve wanted to make an actually useful programming language, and have thus rewritten it about 22 times (rough estimate). hopefully this time i can actually make a language!</p><p>this part 1 will pretty much just be me listing the silly ideas that lead up to this language & a status on my current progress (pretty much just lexing & parsing)</p><h2>general ideas / goals</h2><p>the language itself is called <code>asyl</code>, i might write about the origin story of the name in a later part of this series<a class="footnote" id="rev-1" href="#foot-1">¹</a>.</p><p>pretty much i want to make a “small” language (as many people probably do), and i really like the idea of not giving primitive types too much priority over user-defined things, that includes things like</p><ul>
+— in which i propose a language concept
+<p>over the years i have attempted to make many programming languages, often it’s something very silly and esoteric like “lazers” (weird 2d language), that one regex replacement language (bad <a rel="noopener noreferrer" href="https://esolangs.org/wiki////">///</a> clone), or <a rel="noopener noreferrer" href="https://github.com/1e1001/nsc">No Semicolon C</a> (which isn’t really a language, but it’s language adjacent so i’ll count it here). However over the past 6 or so years i’ve wanted to make an actually useful programming language, and have thus rewritten it about 22 times (rough estimate). hopefully this time i can actually make a language!</p><p>this part 1 will pretty much just be me listing the silly ideas that lead up to this language & a status on my current progress (pretty much just lexing & parsing)</p><h2>general ideas / goals</h2><p>the language itself is called <code>asyl</code>, i might write about the origin story of the name in a later part of this series<a class="footnote" id="rev-1" href="#foot-1">¹</a>.</p><p>pretty much i want to make a “small” language (as many people probably do), and i really like the idea of not giving primitive types too much priority over user-defined things, that includes things like</p><ul>
 <li>very few shorthands for types (currently only strings and functions)</li>
 <li>lots of fun syntax things to make operations doable on multiple types</li>
 <li>hopefully easily extending existing things / types / functions, &c</li>
@@ -38,7 +38,7 @@
 <li>the one keyword so far (this number will likely change in the future): <code>fn</code></li>
 <li>vague reader extensions with <code>#@</code> although currently that just crashes the lexer</li>
 <li>any other text is treated as an identifier<a class="footnote" id="rev-4" href="#foot-4">⁴</a>, which allow escapes in the forms: <code>\hh</code>, <code>\{u…}</code>, and <code>\c</code> (any literal character)</li>
-</ul><p>the actual lexer itself is just some handwritten input-port-reading nonsense but works rather well.</p><h2>parsing</h2><p>for parsing i wanted to try out <a rel="noopener noreferrer" href="https://docs.racket-lang.org/brag/">brag</a>, which lets me write a</p><div class='code-title'><b> parser.rkt</b></div><div class="code"><pre aria-hidden="true"> 1
+</ul><p>the actual lexer itself is just some handwritten input-port-reading nonsense but works rather well.</p><h2>parsing</h2><p>for parsing i wanted to try out <a rel="noopener noreferrer" href="https://docs.racket-lang.org/brag/">brag</a>, which lets me write a</p><div class='code-title'><b> parser.rkt</b></div><div class="code"><pre aria-hidden="true" style="display:none;"> 1
  2
  3
  4
@@ -98,7 +98,7 @@ table-key : expr &#39;:&#39; block
           | &#39;.&#39; [ block ]
 ; to generate specific ast nodes
 s-ident : IDENT
-s-string : STRING</pre></div><p>and it sets up all the parsing for me automatically, so i just give it a list of brag tokens and it returns some vague ast.</p><p>also yes, almost all of these combinations of <code>.</code>s, <code>()</code>s, and <code>@</code>s are function calls, i’ll probably go into more detail once functions are actually being called.</p><h2>unparsing?</h2><p>problem is the ast it returns is way too verbose and also just a direct translation of the syntax tree, so i have an “unparsing” step that <a rel="noopener noreferrer" href="https://docs.racket-lang.org/syntax/Parsing_Syntax.html#(form._((lib._syntax/parse..rkt)._syntax-parse))">syntax-parse</a>’s<a class="footnote" id="rev-5" href="#foot-5">⁵</a> the strings, for example my current testing file contains<a class="footnote" id="rev-6" href="#foot-6">⁶</a></p><div class='code-title'><b>test.asyl</b></div><div class="code"><pre aria-hidden="true">1
+s-string : STRING</pre></div><p>and it sets up all the parsing for me automatically, so i just give it a list of brag tokens and it returns some vague ast.</p><p>also yes, almost all of these combinations of <code>.</code>s, <code>()</code>s, and <code>@</code>s are function calls, i’ll probably go into more detail once functions are actually being called.</p><h2>unparsing?</h2><p>problem is the ast it returns is way too verbose and also just a direct translation of the syntax tree, so i have an “unparsing” step that <a rel="noopener noreferrer" href="https://docs.racket-lang.org/syntax/Parsing_Syntax.html#(form._((lib._syntax/parse..rkt)._syntax-parse))">syntax-parse</a>’s<a class="footnote" id="rev-5" href="#foot-5">⁵</a> the strings, for example my current testing file contains<a class="footnote" id="rev-6" href="#foot-6">⁶</a></p><div class='code-title'><b>test.asyl</b></div><div class="code"><pre aria-hidden="true" style="display:none;">1
 2
 3
 4
@@ -118,7 +118,7 @@ fn factorial(let Number n, let Number t, -&gt;: Number)
 fn factorial(let Number n, -&gt;: Number)
   factorial(n, 1);</pre></div><details class="inner-arrow">
 <summary><p>which expands to <span class="inner-arrow">these tokens</span></p></summary>
-<div class="code"><pre aria-hidden="true"> 1
+<div class="code"><pre aria-hidden="true" style="display:none;"> 1
  2
  3
  4
@@ -236,7 +236,7 @@ fn factorial(let Number n, -&gt;: Number)
  (token-struct &#39;|)| &quot;)&quot; 180 9 16 1 #f)
  (token-struct &#39;|;| &quot;;&quot; 181 9 17 1 #f))</pre></div></details><details class="inner-arrow">
 <summary>and <span class="inner-arrow">this ast</span></summary>
-<div class="code"><pre aria-hidden="true">  1
+<div class="code"><pre aria-hidden="true" style="display:none;">  1
   2
   3
   4
@@ -464,7 +464,7 @@ fn factorial(let Number n, -&gt;: Number)
       &quot;)&quot;))
     (stmt-tail))))
  &quot;;&quot;
- (block)))</pre></div></details><p>and finally gets “unparsed” into</p><div class="code"><pre aria-hidden="true">1
+ (block)))</pre></div></details><p>and finally gets “unparsed” into</p><div class="code"><pre aria-hidden="true" style="display:none;">1
 2
 3
 4

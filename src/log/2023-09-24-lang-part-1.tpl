@@ -2,8 +2,8 @@
 (require "../log.tpl"
          "../fmt.tpl"
          racket/file)
-@log-entry[#:date "2023-09-24" #:title "programming language; part 1" #:desc "when will we get “rewrite-it-in-asyl”" #:mods (list mod-code-select)]{
-over the years i have attempted to make many programming languages, often it’s something very silly and esoteric like “lazers” (weird 2d language), that one regex replacement language (bad @ext-link["https://esolangs.org/wiki////"]{///} clone), or no semicolon C (which isn’t really a language, but it’s language adjacent so i’ll count it here). However over the past 6 or so years i’ve wanted to make an actually useful programming language, and have thus rewritten it about 22 times (rough estimate). hopefully this time i can actually make a language!
+@log-entry[#:date "2023-09-24" #:updated "2023-09-24" #:title "programming language; part 1" #:desc "in which i propose a language concept" #:mods (list mod-code-select)]{
+over the years i have attempted to make many programming languages, often it’s something very silly and esoteric like “lazers” (weird 2d language), that one regex replacement language (bad @ext-link["https://esolangs.org/wiki////"]{///} clone), or @ext-link["https://github.com/1e1001/nsc"]{No Semicolon C} (which isn’t really a language, but it’s language adjacent so i’ll count it here). However over the past 6 or so years i’ve wanted to make an actually useful programming language, and have thus rewritten it about 22 times (rough estimate). hopefully this time i can actually make a language!
 this part 1 will pretty much just be me listing the silly ideas that lead up to this language & a status on my current progress (pretty much just lexing & parsing)
 @:no-p{<h2>general ideas / goals</h2>}
 the language itself is called <code>asyl</code>, i might write about the origin story of the name in a later part of this series@footnote{somehow this is like the third or fourth@footnote{holy shit this post has a lot of vague numbers} name i’ve come up with that has an incredibly convoluted origin story, i should probably consolidate those into their own post lol}.

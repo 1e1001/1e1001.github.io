@@ -32,7 +32,7 @@
 </ul><figure>
 <img src="/res/media/clock-open.jpg" width="1000" height="559" alt="clock-open.jpg" />
 <figcaption>the inside of the clock, with parts labelled
-</figcaption></figure><p>i thought it’d be funny to try and use embedded rust for for this, setting up a basic <a rel="noopener noreferrer" href="https://github.com/Rahix/avr-hal"><code>arduino-hal</code></a> and <a rel="noopener noreferrer" href="https://crates.io/crates/ht16k33"><code>ht16k33</code></a> project, i got it to cycle turning on the all the segments, but if i added the line to turn them off the compiled binary would be too large to flash to the board, and given that it was probably around 2 or 3 in the morning by then i decided to just give up.</p><h2>attempt 3: rewrite it in <s>rust</s> c</h2><p>might as well try raw avr c, so that i’m not reliant on needing the arduino ide to work to make things, might as well get some useful learning out of this project.</p><p>first step is to setup a dev environment:</p><div class='code-title'><b>shell.nix</b></div><div class="code"><pre aria-hidden="true">1
+</figcaption></figure><p>i thought it’d be funny to try and use embedded rust for for this, setting up a basic <a rel="noopener noreferrer" href="https://github.com/Rahix/avr-hal"><code>arduino-hal</code></a> and <a rel="noopener noreferrer" href="https://crates.io/crates/ht16k33"><code>ht16k33</code></a> project, i got it to cycle turning on the all the segments, but if i added the line to turn them off the compiled binary would be too large to flash to the board, and given that it was probably around 2 or 3 in the morning by then i decided to just give up.</p><h2>attempt 3: rewrite it in <s>rust</s> c</h2><p>might as well try raw avr c, so that i’m not reliant on needing the arduino ide to work to make things, might as well get some useful learning out of this project.</p><p>first step is to setup a dev environment:</p><div class='code-title'><b>shell.nix</b></div><div class="code"><pre aria-hidden="true" style="display:none;">1
 2
 3
 4
@@ -50,7 +50,7 @@ pkgs.mkShell rec {
     screen
     pkgs.pkgsCross.avr.buildPackages.gcc
   ];
-}</pre></div><div class='code-title'><b> Makefile</b></div><div class="code"><pre aria-hidden="true"> 1
+}</pre></div><div class='code-title'><b> Makefile</b></div><div class="code"><pre aria-hidden="true" style="display:none;"> 1
  2
  3
  4
@@ -102,7 +102,7 @@ clean:
 <li><code>target/flash.hex</code> for linking all the targets together into one intel hex file</li>
 <li><code>program</code> to build and then write it out to the chip</li>
 <li><code>screen</code> to program and then run gnu <code>screen</code> as a serial monitor</li>
-</ul><h2>putting it all together</h2><p>my struggles with this are vaguely “documented” <a rel="noopener noreferrer" href="https://types.pl/@1e1001/110626511113083986">in this mastodon thread</a>.</p><h3>using other peoples code (a.k.a. libraries)</h3><p>throughout the project i tried like at least 3 i²c libraries, but i ended up on <a rel="noopener noreferrer" href="https://github.com/Sovichea/avr-i2c-library">this one</a>, because it worked.</p><p>similar with uart libraries, i ended up making my own based on <a rel="noopener noreferrer" href="https://github.com/arduino-c/uart">these</a> <a rel="noopener noreferrer" href="https://github.com/arduino-c/uart_stdio">two</a>.</p><h3>writing to the screen</h3><p>first to initialize the screen, copied from the <code>ht16k33</code> rust library init code and <a rel="noopener noreferrer" href="https://cdn-shop.adafruit.com/datasheets/ht16k33v110.pdf">the chip’s datasheet</a>:</p><div class='code-title'><b> main.c</b></div><div class="code"><pre aria-hidden="true">68
+</ul><h2>putting it all together</h2><p>my struggles with this are vaguely “documented” <a rel="noopener noreferrer" href="https://types.pl/@1e1001/110626511113083986">in this mastodon thread</a>.</p><h3>using other peoples code (a.k.a. libraries)</h3><p>throughout the project i tried like at least 3 i²c libraries, but i ended up on <a rel="noopener noreferrer" href="https://github.com/Sovichea/avr-i2c-library">this one</a>, because it worked.</p><p>similar with uart libraries, i ended up making my own based on <a rel="noopener noreferrer" href="https://github.com/arduino-c/uart">these</a> <a rel="noopener noreferrer" href="https://github.com/arduino-c/uart_stdio">two</a>.</p><h3>writing to the screen</h3><p>first to initialize the screen, copied from the <code>ht16k33</code> rust library init code and <a rel="noopener noreferrer" href="https://cdn-shop.adafruit.com/datasheets/ht16k33v110.pdf">the chip’s datasheet</a>:</p><div class='code-title'><b> main.c</b></div><div class="code"><pre aria-hidden="true" style="display:none;">68
 69
 70
 71

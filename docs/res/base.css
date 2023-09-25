@@ -102,6 +102,7 @@ figcaption {
 	margin: 0;
 }
 .code > :first-child {
+	display: block !important;
 	padding: 3px 0.5em 3px 0;
 }
 .code > :last-child {

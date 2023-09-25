@@ -49,7 +49,7 @@
        (format "~a~a\n"
                (build-string (- max-line (string-length (number->string (+ start n)))) {λ _ #\ })
                (+ start n))}))
-  @:{@:when[name "<div class='code-title'><b>" (build-string (sub1 max-line) {λ _ #\ }) name "</b></div>"]<div class="code"><pre aria-hidden="true">@tpl-doc[(if (eq? start +inf.0) '("") lines-text)]</pre><pre role="code">@tpl-doc[body-lines]</pre></div>}
+  @:{@:when[name "<div class='code-title'><b>" (build-string (sub1 max-line) {λ _ #\ }) name "</b></div>"]<div class="code"><pre aria-hidden="true" style="display:none;">@tpl-doc[(if (eq? start +inf.0) '("") lines-text)]</pre><pre role="code">@tpl-doc[body-lines]</pre></div>}
 }
 
 {define+provide (cube-style #:title title #:mods [mods null] . content)
