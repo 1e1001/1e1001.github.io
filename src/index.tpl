@@ -1,7 +1,7 @@
 #lang tpl racket/base
 (require "fmt.tpl" "log.tpl")
 {define (project-link name #:user [user "1e1001"] . rest) @:{
-<li>@ext-link[(string-append "https://github.com/" user "/" name) name] @tpl-doc[rest]</li>
+<li>@ext-link[(string-append "https://github.com/" user "/" name) name]: @tpl-doc[rest]</li>
 }}
 @tpl[(output/file "../docs/index.html")]{
 @cube-style[#:title "1e1001" #:mods (list mod-cens (mod-cube #f))]{
@@ -20,13 +20,13 @@
 + <a href="/log/">@:[(sub1 (length (log-entries)))] more entries</a></p>
 <details class="inner-arrow"><summary><b>PROJECTS</b>: <span class="inner-arrow"> expand for LIST</span></summary><ul style="margin:0">
 <h3 style="margin-left:-30px">current</h3>
-<li>programming language (not public)</li>
+<li>a programming language (not public)</li>
 @project-link["omnitrace"]{combinators for a variety of things}
 <li>gamework (not public): lower-level game framework in rust</li>
 <h3 style="margin-left:-30px">finished</h3>
 @project-link["miny"]{rust <code>Box&lt;T&gt;</code> with size optimizations}
 @project-link["source-clock"]{<a href="/log/2023-07-18-source-code-clock.html">restored source code of a clock</a>}
-@project-link["tpl"]{macro preprocessor / file template library (used to make this SITE)}
+@project-link["tpl"]{macro preprocessor / file template library (used to make this WEBSITE)}
 @project-link["every-float"]{every FLOAT}
 @project-link["punch-card"]{punched card literals for rust}
 @project-link["qotd-rs"]{basic quote-of-the-day server for learning}
@@ -41,6 +41,6 @@
 @project-link["advent-of-code"]{advent of code 2022}
 @project-link["des-asm"]{desmos art contest 2022}
 </ul></details>
-<p><b>MY FONT</b>: <a href="./font.html">“Iosevka F<span class="cens">uck</span>”</a> (custom Iosevka)</p>
+<p><b>MY FONT</b>: <a href="./myfont.html">“Iosevka F<span class="cens">uck</span>”</a> (custom Iosevka)</p>
 <p><b>MORE</b>: will be added at a later time.</p>
 }}

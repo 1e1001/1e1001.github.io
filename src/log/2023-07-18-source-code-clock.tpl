@@ -25,7 +25,7 @@ but first: a quick list of the hardware:
 <li>an entire arduino uno, might as well just be a atmega328p with @ext-link["https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf#page=8"]{a weird pinout}</li>
 <li>an @ext-link["https://www.adafruit.com/products/1269"]{adafruit 7-segment display} with an i²c connection</li>
 <li>an @ext-link["https://www.adafruit.com/products/746"]{adafruit gps thing} which connects via 9600-baud serial</li>
-<li>the one thing i did make, a 3d-printed case for the thing, although entirely irrelavent for this</li>
+<li>the one thing i did make, a 3d-printed case for the thing, although entirely irrelevant for this</li>
 </ul>}
 @:no-p{<figure>
 <img src="/res/media/clock-open.jpg" width="1000" height="559" alt="clock-open.jpg" />

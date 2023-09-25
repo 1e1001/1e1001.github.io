@@ -6,7 +6,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <link rel="self" href="https://1e1001.github.io/log/atom.xml"/>
 <link href="/log/"/><title>1e1001</title><subtitle>&gt;&gt;=</subtitle>
-<updated>@[log-entry-ref-up-date (car (log-entries))]T00:00:00Z</updated>
+<updated>@[log-entry-ref-real-date (car (sort (log-entries) string>? #:key log-entry-ref-real-date))]T00:00:00Z</updated>
 <author><name>1e1001</name><uri>https://1e1001.github.io/</uri></author>
 <id>tag:1e1001.github.io,2023-06-26:/log/</id>
 <generator uri="https://github.com/1e1001/tpl/">tpl</generator>
@@ -21,8 +21,9 @@
 <entry>
 <id>tag:1e1001.github.io,@:[entry-date]:/log/@:[entry-id].html</id>
 <title>@:[entry-title]</title>
-<updated>@:[entry-up-date]T00:00:00Z</updated>
-<published>@:[entry-date]T00:00:00Z</published>
+@:when[entry-up-date]{<updated>@:[entry-up-date]T00:00:00Z</updated>
+
+}<published>@:[entry-date]T00:00:00Z</published>
 <link href="/log/@:[entry-id].html"/>
 <summary>@:[entry-desc]</summary>
 </entry>

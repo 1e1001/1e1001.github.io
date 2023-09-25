@@ -94,7 +94,7 @@ body {
 	opacity: 1;
 	left: 40vw;
 	width: calc(60vw - (40vw - 43vh) - 10px);
-	padding: 30vh 5px 5px;
+	padding: 30vh 5px 10vh;
 	background-color: rgba(var(--bc), 0.9375);
 	min-height: 60vh;
 }

@@ -127,7 +127,7 @@ seems pretty basic, but since you’ve got the whole of &lt;code&gt;racket/base&
 there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.
 
 @:no-p{&lt;h2&gt;this ain’t your normal racket!&lt;/h2&gt;}
-what’s with all the @&quot;@&quot;’s? well the &lt;code&gt;#lang tpl racket/base&lt;/code&gt; doesn’t just use &lt;code&gt;racket/base&lt;/code&gt; as the language, but rather expands to something along the lines of:@footnote{technically, it just contains a modified copy of the implementaiton of &lt;code&gt;#lang at-exp&lt;/code&gt;, but that’s pretty much what it does.}
+what’s with all the @&quot;@&quot;’s? well the &lt;code&gt;#lang tpl racket/base&lt;/code&gt; doesn’t just use &lt;code&gt;racket/base&lt;/code&gt; as the language, but rather expands to something along the lines of:@footnote{technically, it just contains a modified copy of the implementation of &lt;code&gt;#lang at-exp&lt;/code&gt;, but that’s pretty much what it does.}
 @:no-p{@code-block[#:start +inf.0]{
 #lang at-exp racket/base
 (require tpl)
@@ -168,7 +168,7 @@ problem is i don’t really have much to write about :), maybe now that i have a
      (apply string-append (map tpl-doc-&gt;string (tpl-doc-v item)))]
     [else (~s item)])}</pre></div><h2>ok but what about an actual blog post</h2><p>problem is i don’t really have much to write about :), maybe now that i have a way to write them i could convince myself to write about more things, or maybe i could post some old photos of mine…</p><p><span class="mono">-michael</span></p>
 <footer class="fullbox"><h3>footnotes</h3>
-<p><a id="foot-1" href="#rev-1" class="footnote">¹</a> in fact i also use tpl to manage my configuration files across my computers!</p><p><a id="foot-2" href="#rev-2" class="footnote">²</a> because we totally still use 8.3 filesystems \s.</p><p><a id="foot-3" href="#rev-3" class="footnote">³</a> technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.</p>
+<p><a id="foot-1" href="#rev-1" class="footnote">¹</a> in fact i also use tpl to manage my configuration files across my computers!</p><p><a id="foot-2" href="#rev-2" class="footnote">²</a> because we totally still use 8.3 filesystems \s.</p><p><a id="foot-3" href="#rev-3" class="footnote">³</a> technically, it just contains a modified copy of the implementation of <code>#lang at-exp</code>, but that’s pretty much what it does.</p>
 </footer>
 </main>
 

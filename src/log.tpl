@@ -5,6 +5,8 @@
          "fmt.tpl"
          racket/string)
 (struct log-entry-ref (id date up-date title desc) #:transparent)
+{define+provide (log-entry-ref-real-date e)
+  (or (log-entry-ref-up-date e) (log-entry-ref-date e))}
 (provide (struct-out log-entry-ref))
 {define+provide (:no-p . body)
   (cons 'no-p body)}
@@ -14,7 +16,7 @@
   (define table (hash #\0 #\⁰ #\1 #\¹ #\2 #\² #\3 #\³ #\4 #\⁴ #\5 #\⁵ #\6 #\⁶ #\7 #\⁷ #\8 #\⁸ #\9 #\⁹))
   (apply string (map (λ (ch) (hash-ref table ch)) (string->list (number->string n))))}
 {define (log-entry-inner id #:date date #:desc desc #:updated [updated #f] #:mods [mods null] #:title title . body)
-  (set-box! entries (cons (log-entry-ref id date (if updated updated date) title desc) (unbox entries)))
+  (set-box! entries (cons (log-entry-ref id date updated title desc) (unbox entries)))
   {define (collect-paragraphs body)
     {let loop ([body body]
                [para null]
@@ -38,19 +40,21 @@
 @tpl-doc[(collect-paragraphs body)]
 @:when[(> (length (footnotes)) 0)]{
 <footer class="fullbox"><h3>footnotes</h3>
-@tpl-doc[{for/list ([footnote (reverse (footnotes))] [i (in-naturals)]) @:{
-<p><a id="foot-@:[(add1 i)]" href="#rev-@:[(add1 i)]" class="footnote">@superscriptify[(add1 i)]</a> @tpl-doc[footnote]</p>
+@tpl-doc[{for/list ([footnote (reverse (footnotes))]) @:{
+<p><a id="foot-@:[(car footnote)]" href="#rev-@:[(car footnote)]" class="footnote">@superscriptify[(car footnote)]</a> @tpl-doc[(unbox (cdr footnote))]</p>
 }}]
 </footer>}
 }}}
 {define (log-entry-init fn)
   {parameterize ([footnotes null]) (fn)}}
-{define+provide (footnote . body)
-  (footnotes (cons body (footnotes)))
-  (define id (length (footnotes)))
-  @:{
+{define+provide-syntax-rule (footnote . body)
+  {let ([id (add1 (length (footnotes)))]
+        [body-box (box #f)])
+    (footnotes (cons (cons id body-box) (footnotes)))
+    (set-box! body-box (list . body))
+    @:{
 <a class="footnote" id="rev-@:[id]" href="#foot-@:[id]">@:[(superscriptify id)]</a>
-}}
+}}}
 {define+provide (log-entries) (unbox entries)}
 (provide log-entry)
 {define-syntax (log-entry stx)

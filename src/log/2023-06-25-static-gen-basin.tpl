@@ -31,7 +31,7 @@ seems pretty basic, but since you’ve got the whole of <code>racket/base</code>
 there’s not even really a markup language here, just a couple of utility functions i make when i find myself repeating the same html tags, and it’s not even parsing the html to do this, just messing with the raw text.
 
 @:no-p{<h2>this ain’t your normal racket!</h2>}
-what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> doesn’t just use <code>racket/base</code> as the language, but rather expands to something along the lines of:@footnote{technically, it just contains a modified copy of the implementaiton of <code>#lang at-exp</code>, but that’s pretty much what it does.}
+what’s with all the @"@"’s? well the <code>#lang tpl racket/base</code> doesn’t just use <code>racket/base</code> as the language, but rather expands to something along the lines of:@footnote{technically, it just contains a modified copy of the implementation of <code>#lang at-exp</code>, but that’s pretty much what it does.}
 @:no-p{@code-block[#:start +inf.0]{
 #lang at-exp racket/base
 (require tpl)
