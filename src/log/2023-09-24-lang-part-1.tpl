@@ -151,7 +151,7 @@ fn factorial(let Number n, ->: Number)
 <summary>and <span class="inner-arrow">this ast</span></summary>
 @code-block{'(block
   (stmt
-   "@"
+   "@"@""
    (expr (expr-head (s-ident #"public")))
    (stmt
     "fn"
@@ -226,7 +226,7 @@ fn factorial(let Number n, ->: Number)
   ";"
   (block
    (stmt
-    "@"
+    "@"@""
     (expr (expr-head (s-ident #"public")))
     (stmt
      "fn"
