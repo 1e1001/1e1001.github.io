@@ -1,7 +1,6 @@
 #lang tpl racket/base
 (require "../log.tpl"
-         "../fmt.tpl"
-         racket/file)
+         "../fmt.tpl")
 @log-entry[#:date "2023-09-24" #:updated "2023-09-25" #:title "programming language; part 1" #:desc "in which i propose a language concept" #:mods (list mod-code-select)]{
 over the years i have attempted to make many programming languages, often it’s something very silly and esoteric like “lazers” (weird 2d language), that one regex replacement language (bad @ext-link["https://esolangs.org/wiki////"]{///} clone), or @ext-link["https://github.com/1e1001/nsc"]{No Semicolon C} (which isn’t really a language, but it’s language adjacent so i’ll count it here). However over the past 6 or so years i’ve wanted to make an actually useful programming language, and have thus rewritten it about 22 times (rough estimate). hopefully this time i can actually make a language!
 this part 1 will pretty much just be me listing the silly ideas that lead up to this language & a status on my current progress (pretty much just lexing & parsing)
@@ -86,7 +85,7 @@ fn factorial(let Number n, ->: Number)
   factorial(n, 1);
 }}
 @:no-p{<details class="inner-arrow">
-<summary><p>which expands to <span class="inner-arrow">these tokens</span></p></summary>
+<summary><p>which expands to <span class="inner-arrow"> these tokens</span></p></summary>
 @code-block{
 (list
  (token-struct '@"@" "@"@"" 11 2 1 1 #f)
@@ -148,7 +147,7 @@ fn factorial(let Number n, ->: Number)
  (token-struct '|;| ";" 181 9 17 1 #f))
 }</details>}
 @:no-p{<details class="inner-arrow">
-<summary>and <span class="inner-arrow">this ast</span></summary>
+<summary>and <span class="inner-arrow"> this ast</span></summary>
 @code-block{'(block
   (stmt
    "@"@""
@@ -280,10 +279,10 @@ to be expanded later on. “unparsing” is definitely the wrong name for this, 
 the next step to implement is some macro expansion system, originally i wanted to just use racket’s expander but i think now that the ways in which it doesn’t work from how i want it to means that i need to make my own. so far there’s pretty much nothing implemented there except for a giant comment with my ideas in it and a function that crashes.
 already being my 22nd attempt@footnote{oh yeah, my (very approximate) enumeration of these:<ul style="list-style:none">
 <li>1: my original language idea (worse javascript) that never got parsed because i didn’t know about recursion or the idea of defining a syntax</li>
-<li>2-9: pretty-much-failed lisp compilers i wrote while in school</li>
-<li>10-12: a few silly RPN language attempts, helped quite a lot in the “simple language” side of things</li>
-<li>13-16: from my desktop’s Lang folder, now stuck in my archives</li>
-<li>17-21: from my laptop’s Lang folder, mostly just earlier iterations of this one</li>
+<li>2→9: pretty-much-failed lisp compilers i wrote while in school</li>
+<li>10→12: a few silly RPN language attempts, helped quite a lot in the “simple language” side of things</li>
+<li>13→16: from my desktop’s Lang folder, now stuck in my archives</li>
+<li>17→21: from my laptop’s Lang folder, mostly just earlier iterations of this one</li>
 <li>22: this one!</li>
 </ul>}, there’s a high chance it’s not my last, but so far it’s going along pretty well and seeming fairly doable as a programming language, although i don’t have as much time or motivation as i’d like to work on it. currently the implementation isn’t published online anywhere, but i might open-source it sometime soon once i can be more confident this language won’t explode anytime soon.
 see you next month if i can get an idea for a post by then.

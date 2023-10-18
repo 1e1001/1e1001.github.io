@@ -56,6 +56,7 @@ a:active {
 }
 .cens {
 	background-color: rgb(var(--fc));
+	font-family: "Iosevka Fuck Web", monospace;
 }
 a:hover .cens, a:focus .cens {
 	background-color: rgb(var(--bc));
@@ -87,6 +88,7 @@ span.inner-arrow:active {
 }
 span.inner-arrow::before {
 	content: "▶";
+	font-family: "Iosevka Fuck Web", monospace;
 }
 details.inner-arrow[open] span.inner-arrow::before {
 	content: "▼";

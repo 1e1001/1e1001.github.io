@@ -80,3 +80,32 @@ img {
 	width: 100%;
 	height: auto;
 }
+img.inline-img {
+	width: auto;
+	height: 20px;
+	margin-bottom: -4.5px;
+}
+.chatlog tr > th {
+	text-align: left;
+}
+.chatlog tr > th:first-child {
+	vertical-align: top;
+	text-align: right;
+	padding-right: 0.5em;
+}
+s:focus {
+	outline: none;
+}
+s:hover, s:focus {
+	text-decoration: overline;
+}
+#footnote-preview {
+	position: fixed;
+	outline: none;
+	margin-top: 0;
+	padding: 0.35em;
+	top: calc(var(--y) - 1.5px - 0.35em);
+	left: calc(var(--x) - 1px - 0.35em);
+	background-color: rgb(var(--bc));
+	border: 1px solid rgb(var(--fc));
+}

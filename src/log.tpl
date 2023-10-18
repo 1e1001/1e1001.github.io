@@ -4,6 +4,9 @@
           racket/path)
          "fmt.tpl"
          racket/string)
+(define+provide mod-footnote
+  (make-mod
+   'body+ @:{<script src="/res/footnote.js"></script>}))
 (struct log-entry-ref (id date up-date title desc) #:transparent)
 {define+provide (log-entry-ref-real-date e)
   (or (log-entry-ref-up-date e) (log-entry-ref-date e))}
@@ -33,7 +36,7 @@
          (loop (cdr body) null (if (pair? (car body)) (cons (tpl-doc (cdar body)) res) res))]
         [else (loop (cdr body) (cons (car body) para) out)])}}
   @tpl[(output/file (string-append "../docs/log/" id ".html"))]{
-@log-style[#:title (string-append title " - 1e1001") #:desc desc #:mods mods
+@log-style[#:title (string-append title " - 1e1001") #:desc desc #:mods (cons mod-footnote mods)
 #:header @:{<a href="/log/" class="head-link">web log</a> <span style="float:right"><span title="posted date">@:[date]</span>@:when[updated]{ · <span title="updated date">@:[updated]</span>}</span>}]{
 <h1>@:[title]</h1>
 — @:[desc]

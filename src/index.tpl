@@ -16,9 +16,14 @@
 @ext-link["https://discord.gg/PeHDxzt"]{discord}
 @; figure out how matrix @ext-link["https://types.pl/@1e1001"]{matrix}
 @ext-link["https://youtube.com/@1e1001"]{youtube}</p>
+<p><b>THINGS</b>:
+<a href="/every-float/">every float</a>
+<a href="/des-asm/">des.asm</a>
+<a href="/ruben-translator/">ruben (v1)</a>
+</p>
 <p><b>WEBLOG</b>: <a href="/log/@log-entry-ref-id[(car (log-entries))].html">“@log-entry-ref-title[(car (log-entries))]”</a>
 + <a href="/log/">@:[(sub1 (length (log-entries)))] more entries</a></p>
-<details class="inner-arrow"><summary><b>PROJECTS</b>: <span class="inner-arrow"> expand for LIST</span></summary><ul style="margin:0">
+<details class="inner-arrow"><summary><b>PROJECTS</b>: <span class="inner-arrow"> expand for list</span></summary><ul style="margin:0">
 <h3 style="margin-left:-30px">current</h3>
 <li>a programming language (not public)</li>
 @project-link["omnitrace"]{combinators for a variety of things}
@@ -26,11 +31,11 @@
 <h3 style="margin-left:-30px">finished</h3>
 @project-link["miny"]{rust <code>Box&lt;T&gt;</code> with size optimizations}
 @project-link["source-clock"]{<a href="/log/2023-07-18-source-code-clock.html">restored source code of a clock</a>}
-@project-link["tpl"]{macro preprocessor / file template library (used to make this WEBSITE)}
-@project-link["every-float"]{every FLOAT}
+@project-link["tpl"]{macro preprocessor / file template library (used to make this website)}
+@project-link["every-float"]{every float}
 @project-link["punch-card"]{punched card literals for rust}
 @project-link["qotd-rs"]{basic quote-of-the-day server for learning}
-@project-link["vscode-theme-edark"]{personal VSCODE theme}
+@project-link["vscode-theme-edark"]{personal vscode theme}
 <h3 style="margin-left:-30px">the classics</h3>
 @project-link["nsc"]{no-semicolon C linter}
 @project-link["ruben-translator"]{attempt to encode text into a keymashlike, v1 only}
@@ -42,5 +47,6 @@
 @project-link["des-asm"]{desmos art contest 2022}
 </ul></details>
 <p><b>MY FONT</b>: <a href="./myfont.html">“Iosevka F<span class="cens">uck</span>”</a> (custom Iosevka)</p>
+<p><b>STYLE</b>: <a href="./style.html">guide</a> (mainly for personal reference)</p>
 <p><b>MORE</b>: will be added at a later time.</p>
 }}

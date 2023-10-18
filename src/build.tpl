@@ -3,4 +3,5 @@
                 "./log.tpl"
                 "./log-feed.tpl"
                 "./index.tpl"
-                "./myfont.tpl"))
+                "./myfont.tpl"
+                "./style.tpl"))
