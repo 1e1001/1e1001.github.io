@@ -24,6 +24,7 @@
 @:when[entry-up-date]{<updated>@:[entry-up-date]T00:00:00Z</updated>
 
 }<published>@:[entry-date]T00:00:00Z</published>
+<content src="/log/@:[entry-id].html" type="text/html"/>
 <link href="/log/@:[entry-id].html"/>
 <summary>@:[entry-desc]</summary>
 </entry>
