@@ -73,6 +73,6 @@
 <a href="/log/atom.xml">atom feed</a> · <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0;image-rendering:crisp-edges;margin-bottom:calc(7.5px - 0.6em)" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a>
 @[tpl-doc {for/list ([entry (log-entries)]) @:{
 <p><b>@[log-entry-ref-date entry]</b>:
-<a href="/log/@[log-entry-ref-id entry].html">@[log-entry-ref-title entry]</a></p>
+<a href="/log/@[log-entry-ref-id entry].html">@[log-entry-ref-title entry]</a> — @[log-entry-ref-desc entry]</p>
 }}]
 }}
