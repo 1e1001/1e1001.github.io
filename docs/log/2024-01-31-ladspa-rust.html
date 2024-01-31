@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8" />
-<meta name="description"content=">>= in which i make ffi bindings" />
+<meta name="description"content=">>= in which i make ffi bindings, and music!" />
 <meta name="generator"content="tpl" />
 <meta name="viewport"content="width=device-width,initial-scale=1" />
 <title>ladspa plugins in rust - 1e1001</title>
@@ -17,7 +17,7 @@
 <a href="/log/" class="head-link">web log</a> <span style="float:right"><span title="posted date">2024-01-31</span></span>
 </header><main id="content">
 <h1>ladspa plugins in rust</h1>
-— in which i make ffi bindings
+— in which i make ffi bindings, and music!
 <p>As I procrastinate working on either language dev or rewriting my website (using said language dev), I’ve made Rust bindings to <a rel="noopener noreferrer" href="https://www.ladspa.org/">the LADSPA audio plugin interface</a><a class="footnote" id="rev-1" href="#foot-1">¹</a>. LADSPA provides a way for DAW plugins (mainly used for audio processing, effects) to actually interact with the “host” (the DAW) and pass around audio data as well as metadata. As the <code>S</code> in the name implies, it’s a pretty simple interface, consider this flowchart:</p><figure>
 <object data="/res/media/ladspa-graph.svg" width="642" height="664" type="image/svg+xml" alt="ladspa-graph.svg" style="filter:brightness(var(--ft));width:100%;height:auto">
 <img src="/res/media/ladspa-graph.svg" width="642" height="664" type="image/svg+xml" alt="ladspa-graph.svg"/></object>
