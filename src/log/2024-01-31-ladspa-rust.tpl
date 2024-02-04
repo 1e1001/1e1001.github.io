@@ -1,7 +1,7 @@
 #lang tpl racket/base
 (require "../log.tpl"
          "../fmt.tpl")
-@log-entry[#:date "2024-01-31" #:title "ladspa plugins in rust" #:desc "in which i make ffi bindings, and music!" #:mods (list mod-code-select)]{
+@log-entry[#:date "2024-01-31" #:updated "2024-02-03" #:title "ladspa plugins in rust" #:desc "in which i make ffi bindings, and music!" #:mods (list mod-code-select)]{
 As I procrastinate working on either language dev or rewriting my website (using said language dev), I’ve made Rust bindings to @ext-link["https://www.ladspa.org/"]{the LADSPA audio plugin interface}@footnote{Technically there’s already @ext-link["https://crates.io/crates/ladspa"]{<code>ladspa</code>} and @ext-link["https://crates.io/crates/ladspa-sys"]{<code>ladspa-sys</code>}@footnote{Maybe I should just make mine depend on <code>ladspa-sys</code>, and just use its structs instead of manually having my own, oh well I doubt LADSPA will ever go above 1.1}, but I thought I could Do It Better™.}. LADSPA provides a way for DAW plugins (mainly used for audio processing, effects) to actually interact with the “host” (the DAW) and pass around audio data as well as metadata. As the <code>S</code> in the name implies, it’s a pretty simple interface, consider this flowchart:
 @:no-p{<figure>
 <object data="/res/media/ladspa-graph.svg" width="642" height="664" type="image/svg+xml" alt="ladspa-graph.svg" style="filter:brightness(var(--ft));width:100%;height:auto">
