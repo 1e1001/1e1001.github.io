@@ -48,5 +48,6 @@
 </ul></details>
 <p><b>MY FONT</b>: <a href="./myfont.html">“Iosevka F<span class="cens">uck</span>”</a> (custom Iosevka)</p>
 <p><b>STYLE</b>: <a href="./style.html">guide</a> (mainly for personal reference)</p>
+<p><span style="display:inline-block;transform:scaleY(7)translateY(0.5px)"><b>WEBRING</b>:</span> <iframe width="400" height="100" src="https://devpty.github.io/webring/user/1e1001.html" style="border:1px solid rgb(var(--fc));vertical-align:middle"></iframe></p>
 <p><b>MORE</b>: will be added at a later time.</p>
 }}

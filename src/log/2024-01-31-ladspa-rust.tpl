@@ -85,7 +85,7 @@ While this simple demo “works”, it’s not very demonstrative. So, using som
 <li>The two bass’s & that “pad” has XOR effects set to different constants</li>
 <li>The honk of tonk has the “<i>Stereo Decorrelator</i>”, which I have no idea what that does but I sure made it!</li>
 <li>The drums have a DC offset remover, but I added a toggle to instead output the offset amount for each sample, this creates a low-pass filter of sorts (and then I XOR that because of course)</li>
-</ul>}<br/><b>Warning</b>: audio might be a little bit <i>crunchy</i></figcaption></figure>}
+</ul>}<br/><b>Warning</b>: audio might be a little bit <i>crunchy</i>, also sorry safari users!</figcaption></figure>}
 As you can tell, I’m not the best at making music things, but this gets the point across.
 @:no-p{<h2>i wanna try it!!</h2>}
 Currently, I’m still working out a couple things, and the crate likely won’t be published for a few days, once it is, I’ll add a message here:
