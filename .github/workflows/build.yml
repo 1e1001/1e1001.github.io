@@ -39,11 +39,11 @@ jobs:
         run: cd jcs && npm i
       - name: Actually run the build
         timeout-minutes: 1
-        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/www.tgz\""
+        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/github-pages.tar.gz\""
       - uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ${{ runner.temp }}/www.tgz
+          path: ${{ runner.temp }}/github-pages.tar.gz
           retention-days: 1
           if-no-files-found: error
   deploy:
