@@ -20,14 +20,15 @@
   (subbytes (bytes-append (make-bytes len #x30) normal) (bytes-length normal))}
 
 {define (tgz-open)
-  (define-values (pipe-read pipe-write) (make-pipe #f 'tgz-pipe 'tgz-pipe))
+  ;(define-values (pipe-read pipe-write) (make-pipe #f 'tgz-pipe 'tgz-pipe))
   (define file
     (open-output-file (get-opt 'output-path {λ () (error "no output path!")})
                       #:exists 'truncate/replace))
-  (vector pipe-write
+  (vector file ;pipe-write
           (thread {λ ()
-                    (gzip-through-ports pipe-read file "github-pages" (current-seconds))
-                    (close-output-port file)})
+                    ;(gzip-through-ports pipe-read file "github-pages" (current-seconds))
+                    ;(close-output-port file)
+                    })
           (premake-header))}
 
 {define (tgz-write out path data)
