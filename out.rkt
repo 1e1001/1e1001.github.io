@@ -49,8 +49,10 @@
     [(tgz) (apply tgz args)]
     [else (error "invalid output type" output-mode)])}
 
+(define fs-root (get-opt 'output-path {λ () (error "no output path!")}))
+
 (define out-path->fs-path
-  (output-case #:dir {λ (path) (apply build-path (cons "www" (reverse path)))}
+  (output-case #:dir {λ (path) (apply build-path (cons fs-root (reverse path)))}
                #:tgz {λ (path) (path->string (apply build-path (cons "." (reverse path))))}))
 
 (define new-paths (make-hash null))

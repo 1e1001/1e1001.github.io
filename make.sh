@@ -17,11 +17,11 @@ function run {
 		date +"%s.%N" |
 		racket -y init.rkt "$@"
 	}
-	time inner_run "$@"
+	time inner_run output-path='"www"' "$@"
 }
 # run compile output
 function run_dist {
-	run css='3' nodraft='#t' output='tgz' "$@"
+	run css='3' nodraft='#t' "$@"
 }
 # serve static files (and fast-build server)
 function srv {

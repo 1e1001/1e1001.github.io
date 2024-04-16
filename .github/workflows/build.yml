@@ -39,13 +39,10 @@ jobs:
         run: cd jcs && npm i
       - name: Actually run the build
         timeout-minutes: 1
-        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/www.tar\""
-      - uses: actions/upload-artifact@v4
+        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/www/\""
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: ${{ runner.temp }}/www.tar
-          retention-days: 1
-          if-no-files-found: error
+          path: ${{ runner.temp }}/www/
   deploy:
     environment:
       name: github-pages
