@@ -25,10 +25,6 @@ jobs:
           distribution: 'full'
           variant: 'CS'
           version: 'current'
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        shell: bash
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -39,10 +35,10 @@ jobs:
         run: cd jcs && npm i
       - name: Actually run the build
         timeout-minutes: 1
-        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/\""
+        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/www/\""
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ runner.temp }}/
+          path: ${{ runner.temp }}/www/
   deploy:
     environment:
       name: github-pages

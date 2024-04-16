@@ -104,6 +104,7 @@
                        (define exists? (link-exists? fs-path))
                        (printf "~a ~a  \t- Link ~a\n" (if exists? "=" "+") fs-path target)
                        (add-new-path out-path)
+                       (make-parent-directory* fs-path)
                        {when exists?
                          (delete-file fs-path)}
                        (make-file-or-directory-link (path->complete-path target) fs-path)}
