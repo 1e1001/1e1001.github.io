@@ -51,7 +51,7 @@
 
 (define out-path->fs-path
   (output-case #:dir {λ (path) (apply build-path (cons "www" (reverse path)))}
-               #:tgz {λ (path) (path->string (apply build-path (reverse path)))}))
+               #:tgz {λ (path) (path->string (apply build-path (cons "." (reverse path))))}))
 
 (define new-paths (make-hash null))
 {define (add-new-path out-path)
