@@ -25,8 +25,20 @@ jobs:
           distribution: 'full'
           variant: 'CS'
           version: 'current'
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install jcs dependencies
+        shell: bash
+        run: cd jcs && npm i
       - name: Actually run the build
-        run: bash ./make.sh run_dist output-path="\"$RUNNER_TEMP/www.tgz\""
+        shell: bash
+        run: ./make.sh run_dist output-path="\"$RUNNER_TEMP/www.tgz\""
       - uses: actions/upload-artifact@v3
         with:
           name: 'github-pages'
