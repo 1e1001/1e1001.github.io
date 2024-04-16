@@ -33,11 +33,13 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: jcs/package-lock.json
       - name: Install jcs dependencies
         shell: bash
         run: cd jcs && npm i
       - name: Actually run the build
         shell: bash
+        timeout-minutes: 1
         run: ./make.sh run_dist output-path="\"$RUNNER_TEMP/www.tgz\""
       - uses: actions/upload-artifact@v3
         with:
