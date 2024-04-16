@@ -1,3 +1,4 @@
-util/target/
-src/compiled/
-src/log-draft/
+/www/
+/www.tgz
+**/compiled/
+/jcs/node_modules/

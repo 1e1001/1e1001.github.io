@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="description"content=">>= in which i make ffi bindings, and music!" />
+<meta name="generator"content="tpl" />
+<meta name="viewport"content="width=device-width,initial-scale=1" />
+<title>ladspa plugins in rust - 1e1001</title>
+<link rel="stylesheet" type="text/css" href="/asset/res/font/iosevka-fuck.css">
+<link href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:ital,wght@0,100..900;1,100..900" rel="stylesheet" type="text/css">
+<link rel="stylesheet"type="text/css"href="./base.css"/>
+<link rel="stylesheet"type="text/css"href="./log.css"/>
+<script>//thanks, Eric!
+var mcs_first=0
+window.addEventListener('click',function(e,s,r,t){t=e.target
+  if(t.tagName=='PRE'){if(e.detail==2)mcs_first=Date.now()
+else if(e.detail==3&&Date.now()-mcs_first<1000){s=window.getSelection()
+s.removeAllRanges()
+r=document.createRange()
+r.selectNodeContents(t)
+s.addRange(r)}}},true)</script>
+</head><body><header id="header">
+<a target="_parent" href="/" class="head-link" aria-label="home"><svg viewBox="0 0 1 1" role="img" id="logo">
+<title>&gt;&gt;=</title>
+<path fill="rgb(var(--fc))"d="M.5613285.364766L.3778125.18125L.298125.2609375L.5146485.477461L.925.477461L.925.36477"/>
+<path fill="rgb(var(--fc))"d="M.5613285.635234L.925.635234L.925.522539L.5146485.522539L.298125.7390625L.3778125.81875"/>
+<path fill="rgb(var(--fc))"d="M.1546875.81875L.4734375.5L.1546875.18125L.075.2609375L.3140625.5L.075.7390625"/>
+</svg></a>
+<a target="_parent" href="/log/" class="head-link">web log</a>
+&nbsp;<a target="_parent" href="/log/tag-author-1e1001.html" class="head-link">▷Author: 1e1001</a>
+&nbsp;<a target="_parent" href="/log/tag-legacy.html" class="head-link">▷Legacy</a>
+&nbsp;<a target="_parent" href="/log/tag-music.html" class="head-link">▷Music</a>
+<span style="float:right"><span title="posted date">2024-01-31</span> · <span title="updated date">2024-04-16</span></span>
+</header><main id="content">
+<h1>ladspa plugins in rust</h1>
+— in which i make ffi bindings, and music!
+<p>As I procrastinate working on either language dev or rewriting my website (using said language dev), I’ve made Rust bindings to <a target="_parent" rel="noopener noreferrer" href="https://www.ladspa.org/">the LADSPA audio plugin interface</a><a class="footnote" id="rev-1" href="#foot-1">¹</a>. LADSPA provides a way for DAW plugins (mainly used for audio processing, effects) to actually interact with the “host” (the DAW) and pass around audio data as well as metadata. As the <code>S</code> in the name implies, it’s a pretty simple interface, consider this flowchart:</p><figure>
+<object data="./media/ladspa-graph.svg" width="642" height="664" type="image/svg+xml" alt="ladspa-graph.svg" style="filter:brightness(var(--ft));width:100%;height:auto">
+<img src="./media/ladspa-graph.svg" width="642" height="664" type="image/svg+xml" alt="ladspa-graph.svg"/></object>
+<figcaption>Graph of the LADSPA, <code>run_adding</code> &amp; co. have been removed for the fact that I don’t support them anyways.</figcaption></figure><p>Now that one knows how LADSPA works, lets try and implement an interface for it in Rust.</p><h2>step 1: make a shared library</h2><p>This is pretty easy, just add</p><div class='code-title'><b> Cargo.toml</b> (excerpt)</b></div><div class="code"><pre aria-hidden="true" style="display:none;"> 9
+10
+</pre><pre role="code">
+[lib]
+crate-type = [&quot;dylib&quot;]</pre></div><p>And the Rust compiler will output a <code>lib[name].so</code> file.</p><h2>step 2: do everything else</h2><p>…</p><p>Because I didn’t feel like writing a bunch of unsafe code inside of a plugin, I made a safe interface for it. Said interface is structured fairly similarly, except for:</p><ul>
+<li>Instead of manually writing <code>ladspa_descriptor</code>, I have a macro <code>collect_plugins!(Type, …)</code> that generates said function, lazily initializing an array of descriptors the first time it’s called, and indexing said array.</li>
+<li>Instead of the descriptor just being a giant struct with a bunch of fields, the safe abstraction is instead having the plugin instance struct implement <code>Plugin</code> trait, which contains all the relevant info needed to construct the descriptor</li>
+<li>Ports are grouped together into a “Port Collection” type, this allows for static typing of port direction &amp; type, a fun bonus!<a class="footnote" id="rev-3" href="#foot-3">³</a></li>
+<li>And a bunch of other things are replaced with more statically typed versions of themselves.</li>
+</ul><p>Putting it all together to make a plugin:</p><div class='code-title'><b> lib.rs</b></div><div class="code"><pre aria-hidden="true" style="display:none;"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+</pre><pre role="code">
+use ladspa_new::mark::{Audio, Input, Output};
+use ladspa_new::{collect_plugins, Plugin, PluginInfo, Port, PortCollection, PortInfo, Properties};
+// Define the port collection, that holds all our ports with good names
+pub struct Ports&lt;&#39;d&gt; {
+  input: Port&lt;&#39;d, Input, Audio&gt;,
+  output: Port&lt;&#39;d, Output, Audio&gt;,
+}
+// This macro impl&#39;s PortCollection for us, as well as letting us provide metadata
+PortCollection! { for Ports,
+  input: PortInfo::float(&quot;Audio in&quot;),
+  output: PortInfo::float(&quot;Audio out&quot;),
+}
+// The plugin instance struct, if we stored any data between run calls it would go here, but since we aren&#39;t it can just be a unit struct
+pub struct InvertPlugin;
+impl Plugin for InvertPlugin {
+  // Just specifying the port collection type
+  type Ports&lt;&#39;d&gt; = Ports&lt;&#39;d&gt;;
+  // This function returns the plugin&#39;s metadata, just some basic things
+  fn info() -&gt; PluginInfo {
+    PluginInfo {
+      label: &quot;invert&quot;,
+      name: &quot;Invert&quot;,
+      maker: &quot;you&quot;,
+      copyright: &quot;impl Copy for InvertPlugin {}&quot;,
+      properties: Properties::new().hard_rt_capable(true),
+    }
+  }
+  // Since we don&#39;t need to know the sample rate at all, we can just ignore the value
+  fn new(_: usize) -&gt; Option&lt;Self&gt; {
+    Some(Self)
+  }
+  // The actual code of our plugin
+  fn run(&amp;mut self, ports: Self::Ports&lt;&#39;_&gt;) {
+    // This is currently the worst part of my implementation, having to iterate a range instead of the ports directly. At some point in the future I&#39;ll figure out a fix for this!
+    for i in 0..ports.input.len() {
+      let val = ports.input.get(i);
+      // Our *amazing* effect, inverting the waveform
+      ports.output.set(i, -val);
+    }
+  }
+}
+// Finally, register our plugin, if you have multiple plugins in the same library this would contain all of the plugin types
+collect_plugins!(InvertPlugin);</pre></div><p>And now we can take some audio:</p><figure>
+<audio controls src="./media/ladspa-before.flac" alt="ladspa-before.flac"></audio>
+<figcaption>Our source audio, some fun piano notes from keymashing LMMS.</figcaption></figure><p>Apply our fancy new plugin, and we get:</p><figure>
+<audio controls src="./media/ladspa-after.flac" alt="ladspa-after.flac"></audio>
+<figcaption>While it might sound the same, this is in fact a different file.</figcaption></figure><p>While this simple demo “works”, it’s not very demonstrative. So, using some other simple plugins I made, I made this:</p><figure>
+<audio controls src="./media/ladspa-demo.ogg" alt="ladspa-demo.ogg"></audio>
+<figcaption>Every instrument in this has at least one effect powered by Rust!<a class="footnote" id="rev-4" href="#foot-4">⁴</a><br/><b>Warning</b>: audio might be a little bit <i>crunchy</i>, also sorry safari users!</figcaption></figure><p>As you can tell, I’m not the best at making music things, but this gets the point across.</p><h2>i wanna try it!!</h2><p>Currently, I’m still working out a couple things, and the crate likely won’t be published for a few days, once it is, I’ll add a message here:</p><p>… It still hasn’t happened yet</p><p>Until then, check out my other published crates: <a target="_parent" rel="noopener noreferrer" href="https://crates.io/crates/punch-card"><code>punch-card</code></a> and <a target="_parent" rel="noopener noreferrer" href="https://crates.io/crates/miny"><code>miny</code></a> :3</p><p>I’m currently working on migrating my website to be an entirely different website, including having a new domain!</p><p><span class="mono">-michael</span></p>
+<footer class="fullbox"><h3>footnotes</h3>
+<p><a id="foot-1" href="#rev-1" class="footnote">¹</a> Technically there’s already <a target="_parent" rel="noopener noreferrer" href="https://crates.io/crates/ladspa"><code>ladspa</code></a> and <a target="_parent" rel="noopener noreferrer" href="https://crates.io/crates/ladspa-sys"><code>ladspa-sys</code></a><a class="footnote" id="rev-2" href="#foot-2">²</a>, but I thought I could Do It Better™.</p><p><a id="foot-2" href="#rev-2" class="footnote">²</a> Maybe I should just make mine depend on <code>ladspa-sys</code>, and just use its structs instead of manually having my own, oh well I doubt LADSPA will ever go above 1.1</p><p><a id="foot-3" href="#rev-3" class="footnote">³</a> This specific decision was inspired by <a target="_parent" rel="noopener noreferrer" href="https://crates.io/crates/lv2"><code>lv2</code></a>, which I unfortunately cannot be bothered to use, LV2 somehow turned LADSPA into LADPA.</p><p><a id="foot-4" href="#rev-4" class="footnote">⁴</a> In specific:<ul>
+<li>The two bass’s & that “pad” has XOR effects set to different constants</li>
+<li>The honk of tonk has the “<i>Stereo Decorrelator</i>”, which I have no idea what that does but I sure made it!</li>
+<li>The drums have a DC offset remover, but I added a toggle to instead output the offset amount for each sample, this creates a low-pass filter of sorts (and then I XOR that because of course)</li>
+</ul></p>
+</footer>
+</main>
+<script src="./footnote.js"></script>
+</body></html>

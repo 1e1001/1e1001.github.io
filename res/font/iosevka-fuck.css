@@ -1,0 +1,36 @@
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('woff2/iosevka-fuck-extralight.woff2') format('woff2'), url('ttf/iosevka-fuck-extralight.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('woff2/iosevka-fuck-regular.woff2') format('woff2'), url('ttf/iosevka-fuck-regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('woff2/iosevka-fuck-italic.woff2') format('woff2'), url('ttf/iosevka-fuck-italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka Fuck Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('woff2/iosevka-fuck-bold.woff2') format('woff2'), url('ttf/iosevka-fuck-bold.ttf') format('truetype');
+}

@@ -1,0 +1,19 @@
+{
+  "name": "jcs",
+  "version": "1.0.0",
+  "description": "js compiler server",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "1e1001",
+  "license": "MIT",
+  "dependencies": {
+    "@typed/node": "^6.7.0",
+    "browserslist": "^4.23.0",
+    "katex": "^0.16.9",
+    "lightningcss": "^1.24.1",
+    "shiki": "^1.2.0"
+  }
+}

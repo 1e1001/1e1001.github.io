@@ -2,8 +2,7 @@
 pkgs.mkShell rec {
   buildInputs = with pkgs; [
     racket
-    gnumake
-    inotify-tools
-    python3Minimal
+    # javascript dependencies, katex, shiki, lightningcss
+    nodejs
   ];
 }

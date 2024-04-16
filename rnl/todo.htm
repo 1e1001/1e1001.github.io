@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HEAD>
+<META NAME="Author" CONTENT="michael">
+<META NAME="Description" CONTENT="michael">
+<STYLE TYPE="text/css">
+body{font-family:'Times New Roman','Times Roman',serif}
+.spin{transition:transform 500ms}</STYLE>
+<TITLE>under constrution</TITLE>
+<BODY BACKGROUND="/asset/res/image/server_on_fire.gif" TEXT="Purple">
+<P>&nbsp;<P>&nbsp;</P>
+<FONT SIZE="420">
+<H1>under construction!</H1>
+<P><I>please come back latter</I> <IMG SRC="/asset/res/image/neko_sleep.gif">
+<P>made on linux!<BR><IMG SRC="/asset/res/image/tux_linux.gif">
+<P><IMG SRC="/asset/res/image/no_w3c.png">
+<SCRIPT TYPE="text/javascript">
+var all=document.getElementsByTagName("*")
+for(var i=0; i<all.length; ++i)
+	if(all[i].tagName!="I" && all[i].tagName != "FONT")
+  all[i].className="spin",all[i].onclick=function(e){
+e.stopPropagation()
+this.style="transform:rotate("+(Math.random()*360)+"deg)translate("+(Math.random() *100-50)+"%,"+(Math.random() *100-50) +"%)scale("+(Math.random()* 1 + 0.5)+")"
+}</SCRIPT>
