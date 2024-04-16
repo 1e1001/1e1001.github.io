@@ -115,7 +115,7 @@
                               (or (markup-entry-updated ent) (markup-entry-date ent) "0000-00-00")}
                             ents)
                        string>?))
-                       "T00:00:00Z")
+            "T00:00:00Z")
         (map {λ (author) (</ 'author< (</ 'name< (car author)) (</ 'uri< (cdr author)))}
              (hash->list XML_AUTHORS))
         (</ 'id< "tag:1e1001.github.io,2023-06-26:/log/")
@@ -314,15 +314,28 @@
           (StyleCase "\uE5CD" "Close"))
       (</
        'div
-       #:class (css-class (if (markup-entry-legacy ent) null (cssx #:overflow "auto"))
-                          (cssx #:height "calc(100vh - 2em)"
-                                #:position "relative"
-                                (MEDIA_LANDSCAPE)
-                                (#:background-color red+1.2
-                                                    "@media (prefers-color-scheme: dark)"
-                                                    (#:background-color red+1.0)
-                                                    #:height "100vh"
-                                                    #:width "calc(75vw - 4em)")))
+       #:class
+       (css-class (if (markup-entry-legacy ent)
+                      null
+                      (cssx #:overflow-x "hidden" #:overflow-y "auto" #:background-color grey.8))
+                  (cssx #:height "calc(100vh - 2em)"
+                        #:position "relative"
+                        "@media (prefers-color-scheme: dark)"
+                        (#:background-color grey.0)
+                        (MEDIA_LANDSCAPE)
+                        (#:height "100vh" #:width "calc(75vw - 4em)")))
+       (if (markup-entry-legacy ent)
+           null
+           (</ 'div
+               #:class (cssx-class #:position "fixed"
+                                   #:pointer-events "none"
+                                   #:top "0"
+                                   #:left "0"
+                                   #:width "calc(25vw + 4em)"
+                                   #:bottom "0"
+                                   #:background-color red+1.2
+                                   "@media (prefers-color-scheme: dark)"
+                                   (#:background-color red+1.0))))
        (</
         'main
         #:id "fm"
@@ -338,7 +351,7 @@
                          "@media (prefers-color-scheme: dark)"
                          (#:background-color grey.0 #:color grey.8)
                          (MEDIA_LANDSCAPE)
-                         (#:width "calc(50vw + 8em)" #:left "calc(25vw - 12em)")))
+                         (#:width "unset" #:left "calc(25vw - 12em)" #:right "0")))
         (if (markup-entry-legacy ent)
             null
             (list

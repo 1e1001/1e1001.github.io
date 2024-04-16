@@ -25,10 +25,10 @@
     (open-output-file (get-opt 'output-path {λ () (error "no output path!")})
                       #:exists 'truncate/replace))
   (vector file ;pipe-write
-          (thread void #;{λ ()
-                    (gzip-through-ports pipe-read file "github-pages" (current-seconds))
-                    (close-output-port file)
-                    })
+          (thread void
+                  #;{λ ()
+                      (gzip-through-ports pipe-read file "github-pages" (current-seconds))
+                      (close-output-port file)})
           (premake-header))}
 
 {define (tgz-write out path data)
