@@ -4,6 +4,6 @@
 	(legacy-entry
 		#:id "2023-07-18-source-code-clock"
 		#:title "Source code clock"
-		#:desc "in which i rewrite a clock"
+		#:desc "in which I rewrite a clock"
 		#:updated "2024-04-16"
 		#:tags '("Hardware" "Legacy"))}
