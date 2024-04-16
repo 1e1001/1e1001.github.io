@@ -114,7 +114,8 @@
             (car (sort (map {λ (ent)
                               (or (markup-entry-updated ent) (markup-entry-date ent) "0000-00-00")}
                             ents)
-                       string>?)))
+                       string>?))
+                       "T00:00:00Z")
         (map {λ (author) (</ 'author< (</ 'name< (car author)) (</ 'uri< (cdr author)))}
              (hash->list XML_AUTHORS))
         (</ 'id< "tag:1e1001.github.io,2023-06-26:/log/")

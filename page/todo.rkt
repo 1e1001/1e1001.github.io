@@ -103,7 +103,7 @@
                                                (#:font-weight "inherit" #:color grey.8)))
                       "https://"
                       (</ 'b "michael.malinov.com")
-                      "/NOTDONE.XHT"))
+                      "/NOTDONE.HTM"))
               (</ 'a
                   #:href ""
                   #:id "nr"
