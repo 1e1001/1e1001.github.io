@@ -1,9 +1,9 @@
 import { getHighlighter } from "shiki";
 import { register } from "./worker_common.js";
 import { transformerBracketPairColor } from "./brackets.js";
-
-import theme_dark from "./data/edark.json" assert {type: "json"};
-import lang_racket from "./data/racket.tmLanguage.json" assert {type: "json"};
+// json data but in a js file to allow it to work on node
+import theme_dark from "./data/edark.js";
+import lang_racket from "./data/racket.tmLanguage.js";
 
 const highlighter = await getHighlighter({
 	themes: [theme_dark, "light-plus"],

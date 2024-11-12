@@ -1,4 +1,4 @@
-{
+export default {
   "$schema": "vscode://schemas/color-theme",
   "name": "edark",
   "colors": {
